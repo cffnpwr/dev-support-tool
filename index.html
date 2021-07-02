@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./js/carousel.js"></script>
+
     <title>開発支援ツール</title>
 </head>
 <body>
     <h1>開発支援ツーーーーーーーーーーール</h1>
+    <div>
+        <div id="input" onchange="getData()">
+            <p>
+                <h2>設定</h2>
+                <div>
+                    <input type="checkbox" name="controle" id="controle">
+                    <label for="controle">コントロール</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="indicator" id="indicator">
+                    <label for="indicator">インジケータ</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="caption" id="caption">
+                    <label for="caption">説明</label>
+                </div>
+    
+                <div>
+                    <input type="checkbox" name="crossfade" id="crossfade">
+                    <label for="crossfade">クロスフェード</label>
+                </div>
+    
+                <div>
+                    <label for="count">スライドの数</label>
+                    <input type="number" name="count" id="slideCnt" value="1">
+                </div>
+            </p>
+            <p>
+                <h2>出力</h2>
+                <textarea name="output" id="outputArea" cols="200" rows="30"></textarea>
+            </p>
+        </div>
+    </div>
+
 </body>
 </html>
