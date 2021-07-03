@@ -1,3 +1,5 @@
+window.onload = getData;
+
 //自動更新
 function getData() {
     const typeList = [
@@ -54,7 +56,7 @@ function genCarousel(slideCnt, ignoreType) {
     var caption = '\
 \t\t\t<div class="carousel-caption d-none d-md-block">\n\
 \t\t\t\t<h5>スライドのタイトル</h5>\n\
-\t\t\t\<p>スライドの説明</p>\n\
+\t\t\t\t<p>スライドの説明</p>\n\
 \t\t\t</div>\n';
 
     for (const key in ignoreType) {
@@ -67,12 +69,12 @@ function genCarousel(slideCnt, ignoreType) {
         if (i < 1) {
             slides += '\
 \t\t<div class="carousel-item active">\n\
-\t\t\t<!--追加要素->\n ' + caption + '\
+\t\t\tスライドの中身\n ' + caption + '\
 \t\t</div>\n ';
         }else{
             slides += '\
 \t\t<div class="carousel-item">\n\
-\t\t\t<!--追加要素->\n' + caption + ' \
+\t\t\tスライドの中身\n' + caption + ' \
 \t\t</div>\n ';
         }
     }
