@@ -36,8 +36,7 @@ function genCarousel(slideCnt, ignoreType) {
 \t<button class="carousel-control-next" type="button" data-bs-target="#carouselSlide" data-bs-slide="next">\n\
 \t\t<span class="carousel-control-next-icon" aria-hidden="true"></span>\n\
 \t\t<span class="visually-hidden">次へ</span>\n\
-\t</button>\n\
-    ';
+\t</button>\n';
 
     var indicators = "";
     for (let i = 0; i < slideCnt; i++) {
