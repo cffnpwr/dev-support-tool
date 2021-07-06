@@ -11,11 +11,15 @@ function changeCategory() {
                 document.getElementById(settingsCategoryId).onchange = genCarousel;
                 genCarousel();
                 break;
+            
+            case "text":
+                document.getElementById(settingsCategoryId).onchange = genText;
+                genText();
+                break;
         
             default:
                 break;
         }
-
     }
 }
 

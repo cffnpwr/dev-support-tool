@@ -53,8 +53,7 @@
                             </div>
                             
                             <div>
-                                <label for="count">スライドの数</label>
-                                <input type="number" name="count" value="1" id="slideCnt">
+                                <input type="number" name="count" id="slideCnt" placeholder="スライドの数">
                             </div>
                         </div>
                     </div>
@@ -62,12 +61,91 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
+                            Text
                         </button>
                     </h2>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#settingsList">
-                        <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion-body" id="text">
+                            <div>
+                                <input type="text" id="inputMessage" placeholder="テキストを入力してください">
+                            </div>
+
+                            <div>
+                                <label for="textColor">文字色</label>
+                                <select id="textColor">
+                                    <option value="dark" selected>Dark</option>
+                                    <option value="light">Light</option>
+                                    <option value="primary">Primary</option>
+                                    <option value="secondary">Secondary</option>
+                                    <option value="success">Success</option>
+                                    <option value="info">Info</option>
+                                    <option value="warning">Warning</option>
+                                    <option value="danger">Danger</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="backGroundColor">背景色</label>
+                                <select id="backGroundColor">
+                                    <option value="dark">Dark</option>
+                                    <option value="light" selected>Light</option>
+                                    <option value="primary">Primary</option>
+                                    <option value="secondary">Secondary</option>
+                                    <option value="success">Success</option>
+                                    <option value="info">Info</option>
+                                    <option value="warning">Warning</option>
+                                    <option value="danger">Danger</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="position">位置ヘルパー</label>
+                                <select id="position">
+                                    <option value="" selected>固定しない</option>
+                                    <option value="fixed-top">最上部に固定</option>
+                                    <option value="fixed-bottom">最下部に固定</option>
+                                    <option value="sticky-top">最上部に達すると固定</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="alignment">文字の配置</label>
+                                <select id="alignment">
+                                    <option value="text-start" selected>行頭揃え</option>
+                                    <option value="text-center">中央揃え</option>
+                                    <option value="text-end">行末揃え</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="shadow">影の追加</label>
+                                <select id="shadow">
+                                    <option value="" selected>影なし</option>
+                                    <option value="shadow">影あり</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="fontSize">文字サイズ</label>
+                                <select id="fontSize">
+                                    <option value="fs-1">極大</option>
+                                    <option value="fs-2">大</option>
+                                    <option value="fs-3" selected>中</option>
+                                    <option value="fs-4">小</option>
+                                    <option value="fs-5">極小</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="fontWeight">文字の太さ</label>
+                                <select id="fontWeight">
+                                    <option value="fw-1">極太</option>
+                                    <option value="fw-2">太め</option>
+                                    <option value="fw-3" selected>中</option>
+                                    <option value="fw-4">細め</option>
+                                    <option value="fw-5">極細</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,7 +163,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade show active" id="picture" role="tabpanel" aria-labelledby="picture-tab">
+        <div class="tab-pane fade show" id="picture" role="tabpanel" aria-labelledby="picture-tab">
             <div class="accordion" id="settingsList">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -161,6 +239,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="js/carousel.js"></script>
+    <script src="js/text.js"></script>
     <script src="js/main.js"></script>
 </body>
 

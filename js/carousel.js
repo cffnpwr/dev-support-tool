@@ -6,9 +6,8 @@ function genCarousel() {
         "caption",
         "crossfade"
     ];
-    var carouselType = [];
-    var slideCnt = 0;
-    var cnt = 0;
+    let carouselType = [];
+    let slideCnt = 0;
 
     for (const key in typeList) {
         if (!document.getElementById(typeList[key]).checked) {
@@ -17,12 +16,12 @@ function genCarousel() {
     }
     slideCnt = document.getElementById("slideCnt").value;
 
-    genCarouselCode(slideCnt, carouselType);
+    document.getElementById("outputArea").value = genCarouselCode(slideCnt, carouselType);
 }
 
 function genCarouselCode(slideCnt, ignoreType) {
-    var crossfade = " carousel-fade";
-    var controle = '\
+    let crossfade = " carousel-fade";
+    let controle = '\
 \t<button class="carousel-control-prev" type="button" data-bs-target="#carouselSlide" data-bs-slide="prev"> \n\
 \t\t<span class="carousel-control-prev-icon" aria-hidden="true"></span>\n\
 \t\t<span class="visually-hidden">前へ</span>\n\
@@ -32,7 +31,7 @@ function genCarouselCode(slideCnt, ignoreType) {
 \t\t<span class="visually-hidden">次へ</span>\n\
 \t</button>\n';
 
-    var indicators = "";
+    let indicators = "";
     for (let i = 0; i < slideCnt; i++) {
         if (i < 1) {
             indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="'+ i +'" class="active" aria-current="true" aria-label="スライド ' + (i + 1) +'"></button>\n';
@@ -40,13 +39,13 @@ function genCarouselCode(slideCnt, ignoreType) {
             indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="'+ i +'" aria-label="スライド ' + (i + 1) +'"></button>\n';
         }
     }
-    var indicator = '\
+    let indicator = '\
 \t<div class="carousel-indicators">\n'
     + indicators +
 '\t</div>\n';
 
-    var slides = "";
-    var caption = '\
+    let slides = "";
+    let caption = '\
 \t\t\t<div class="carousel-caption d-none d-md-block">\n\
 \t\t\t\t<h5>スライドのタイトル</h5>\n\
 \t\t\t\t<p>スライドの説明</p>\n\
@@ -92,7 +91,7 @@ function genCarouselCode(slideCnt, ignoreType) {
         }
     }
 
-    var carousel = '\
+    const carousel = '\
 <div id="carouselSlide" class="carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
 \t<div class="carousel-inner">\n'
     + slides + 
@@ -100,5 +99,5 @@ function genCarouselCode(slideCnt, ignoreType) {
     + controle + indicator +
 '</div>';
 
-    document.getElementById("outputArea").value = carousel;
+    return carousel;
 }
