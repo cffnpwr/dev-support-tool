@@ -1,7 +1,5 @@
-window.onload = getData;
-
 //自動更新
-function getData() {
+function genCarousel() {
     const typeList = [
         "controle",
         "indicator",
@@ -19,14 +17,10 @@ function getData() {
     }
     slideCnt = document.getElementById("slideCnt").value;
 
-    genCarousel(slideCnt, carouselType);
+    genCarouselCode(slideCnt, carouselType);
 }
 
-function selectFunction(name) {
-    //実装予定
-}
-
-function genCarousel(slideCnt, ignoreType) {
+function genCarouselCode(slideCnt, ignoreType) {
     var crossfade = " carousel-fade";
     var controle = '\
 \t<button class="carousel-control-prev" type="button" data-bs-target="#carouselSlide" data-bs-slide="prev"> \n\
@@ -36,8 +30,7 @@ function genCarousel(slideCnt, ignoreType) {
 \t<button class="carousel-control-next" type="button" data-bs-target="#carouselSlide" data-bs-slide="next">\n\
 \t\t<span class="carousel-control-next-icon" aria-hidden="true"></span>\n\
 \t\t<span class="visually-hidden">次へ</span>\n\
-\t</button>\n\
-    ';
+\t</button>\n';
 
     var indicators = "";
     for (let i = 0; i < slideCnt; i++) {
