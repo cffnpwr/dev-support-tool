@@ -1,242 +1,273 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- リンク先からbootstrapを入手 -->
+    <link href="css/common.css" rel="stylesheet"><!-- 共通 -->
+    <link href="css/tab.css" rel="stylesheet"><!-- タブ -->
+    <link href="css/accordion.css" rel="stylesheet"><!-- アコーディオン -->
+    <link href="css/output.css" rel="stylesheet"><!-- 出力 -->
+    <link href="css/preview.css" rel="stylesheet"><!-- プレビュー -->
 
     <title>開発支援ツール</title>
 </head>
 
 <body>
     <h1>開発支援ツーーーーーーーーーーール</h1>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#text" role="tab" aria-controls="text" aria-selected="true">テキスト</a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#picture" role="tab" aria-controls="picture" aria-selected="false">写真</a>
-        </li>
-    </ul>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="text" role="tabpanel" aria-labelledby="text-tab">
-            <div class="accordion" id="settingsList">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Carousel
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#settingsList">
-                        <div id="carousel" class="accordion-body">
-                            <h2>設定</h2>
-                            <div>
-                                <input type="checkbox" name="controle" id="controle">
-                                <label for="controle">コントロール</label>
+    <div class="left">
+        <ul class="nav nav-tabs nav-pills width" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#text" role="tab"
+                    aria-controls="text" aria-selected="true">テキスト</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#picture" role="tab"
+                    aria-controls="picture" aria-selected="false">写真</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="text" role="tabpanel" aria-labelledby="text-tab">
+                <div class="accordion" id="settingsList">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Carousel
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#settingsList">
+                            <div id="carousel" class="accordion-body">
+                                <h2>設定</h2>
+                                <div>
+                                    <input type="checkbox" name="controle" id="controle">
+                                    <label for="controle">コントロール</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="indicator" id="indicator">
+                                    <label for="indicator">インジケータ</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="caption" id="caption">
+                                    <label for="caption">説明</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" name="crossfade" id="crossfade">
+                                    <label for="crossfade">クロスフェード</label>
+                                </div>
+
+                                <div>
+                                    <input type="number" name="count" id="slideCnt" placeholder="スライドの数">
+                                </div>
                             </div>
-        
-                            <div>
-                                <input type="checkbox" name="indicator" id="indicator">
-                                <label for="indicator">インジケータ</label>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Text
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#settingsList">
+                            <div class="accordion-body" id="text">
+                                <div>
+                                    <input type="text" id="inputMessage" placeholder="テキストを入力してください">
+                                </div>
+
+                                <div>
+                                    <label for="textColor">文字色</label>
+                                    <select id="textColor">
+                                        <option value="dark" selected>Dark</option>
+                                        <option value="light">Light</option>
+                                        <option value="primary">Primary</option>
+                                        <option value="secondary">Secondary</option>
+                                        <option value="success">Success</option>
+                                        <option value="info">Info</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="danger">Danger</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="backGroundColor">背景色</label>
+                                    <select id="backGroundColor">
+                                        <option value="dark">Dark</option>
+                                        <option value="light" selected>Light</option>
+                                        <option value="primary">Primary</option>
+                                        <option value="secondary">Secondary</option>
+                                        <option value="success">Success</option>
+                                        <option value="info">Info</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="danger">Danger</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="position">位置ヘルパー</label>
+                                    <select id="position">
+                                        <option value="" selected>固定しない</option>
+                                        <option value="fixed-top">最上部に固定</option>
+                                        <option value="fixed-bottom">最下部に固定</option>
+                                        <option value="sticky-top">最上部に達すると固定</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="alignment">文字の配置</label>
+                                    <select id="alignment">
+                                        <option value="text-start" selected>行頭揃え</option>
+                                        <option value="text-center">中央揃え</option>
+                                        <option value="text-end">行末揃え</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="shadow">影の追加</label>
+                                    <select id="shadow">
+                                        <option value="" selected>影なし</option>
+                                        <option value="shadow">影あり</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="fontSize">文字サイズ</label>
+                                    <select id="fontSize">
+                                        <option value="fs-1">極大</option>
+                                        <option value="fs-2">大</option>
+                                        <option value="fs-3" selected>中</option>
+                                        <option value="fs-4">小</option>
+                                        <option value="fs-5">極小</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="fontWeight">文字の太さ</label>
+                                    <select id="fontWeight">
+                                        <option value="fw-1">極太</option>
+                                        <option value="fw-2">太め</option>
+                                        <option value="fw-3" selected>中</option>
+                                        <option value="fw-4">細め</option>
+                                        <option value="fw-5">極細</option>
+                                    </select>
+                                </div>
                             </div>
-        
-                            <div>
-                                <input type="checkbox" name="caption" id="caption">
-                                <label for="caption">説明</label>
-                            </div>
-        
-                            <div>
-                                <input type="checkbox" name="crossfade" id="crossfade">
-                                <label for="crossfade">クロスフェード</label>
-                            </div>
-                            
-                            <div>
-                                <input type="number" name="count" id="slideCnt" placeholder="スライドの数">
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#settingsList">
+                            <div class="accordion-body">
+                                なんか書け
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Text
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#settingsList">
-                        <div class="accordion-body" id="text">
-                            <div>
-                                <input type="text" id="inputMessage" placeholder="テキストを入力してください">
-                            </div>
+            </div>
+            <div class="tab-pane fade show" id="picture" role="tabpanel" aria-labelledby="picture-tab">
+                <div class="accordion" id="settingsList">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                はげ
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#settingsList">
+                            <div id="carousel" class="accordion-body">
+                                <h2>設定</h2>
+                                <div>
+                                    <input type="checkbox" name="controle" id="controle">
+                                    <label for="controle">コントロール</label>
+                                </div>
 
-                            <div>
-                                <label for="textColor">文字色</label>
-                                <select id="textColor">
-                                    <option value="dark" selected>Dark</option>
-                                    <option value="light">Light</option>
-                                    <option value="primary">Primary</option>
-                                    <option value="secondary">Secondary</option>
-                                    <option value="success">Success</option>
-                                    <option value="info">Info</option>
-                                    <option value="warning">Warning</option>
-                                    <option value="danger">Danger</option>
-                                </select>
-                            </div>
+                                <div>
+                                    <input type="checkbox" name="indicator" id="indicator">
+                                    <label for="indicator">インジケータ</label>
+                                </div>
 
-                            <div>
-                                <label for="backGroundColor">背景色</label>
-                                <select id="backGroundColor">
-                                    <option value="dark">Dark</option>
-                                    <option value="light" selected>Light</option>
-                                    <option value="primary">Primary</option>
-                                    <option value="secondary">Secondary</option>
-                                    <option value="success">Success</option>
-                                    <option value="info">Info</option>
-                                    <option value="warning">Warning</option>
-                                    <option value="danger">Danger</option>
-                                </select>
-                            </div>
+                                <div>
+                                    <input type="checkbox" name="caption" id="caption">
+                                    <label for="caption">説明</label>
+                                </div>
 
-                            <div>
-                                <label for="position">位置ヘルパー</label>
-                                <select id="position">
-                                    <option value="" selected>固定しない</option>
-                                    <option value="fixed-top">最上部に固定</option>
-                                    <option value="fixed-bottom">最下部に固定</option>
-                                    <option value="sticky-top">最上部に達すると固定</option>
-                                </select>
-                            </div>
+                                <div>
+                                    <input type="checkbox" name="crossfade" id="crossfade">
+                                    <label for="crossfade">クロスフェード</label>
+                                </div>
 
-                            <div>
-                                <label for="alignment">文字の配置</label>
-                                <select id="alignment">
-                                    <option value="text-start" selected>行頭揃え</option>
-                                    <option value="text-center">中央揃え</option>
-                                    <option value="text-end">行末揃え</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="shadow">影の追加</label>
-                                <select id="shadow">
-                                    <option value="" selected>影なし</option>
-                                    <option value="shadow">影あり</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="fontSize">文字サイズ</label>
-                                <select id="fontSize">
-                                    <option value="fs-1">極大</option>
-                                    <option value="fs-2">大</option>
-                                    <option value="fs-3" selected>中</option>
-                                    <option value="fs-4">小</option>
-                                    <option value="fs-5">極小</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="fontWeight">文字の太さ</label>
-                                <select id="fontWeight">
-                                    <option value="fw-1">極太</option>
-                                    <option value="fw-2">太め</option>
-                                    <option value="fw-3" selected>中</option>
-                                    <option value="fw-4">細め</option>
-                                    <option value="fw-5">極細</option>
-                                </select>
+                                <div>
+                                    <label for="count">スライドの数</label>
+                                    <input type="number" name="count" value="1" id="slideCnt">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"  data-bs-parent="#settingsList">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#settingsList">
+                            <div class="accordion-body">
+                                なんか書け
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#settingsList">
+                            <div class="accordion-body">
+                                なんか書け
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade show" id="picture" role="tabpanel" aria-labelledby="picture-tab">
-            <div class="accordion" id="settingsList">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            はげ
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#settingsList">
-                        <div id="carousel" class="accordion-body">
-                            <h2>設定</h2>
-                            <div>
-                                <input type="checkbox" name="controle" id="controle">
-                                <label for="controle">コントロール</label>
-                            </div>
-        
-                            <div>
-                                <input type="checkbox" name="indicator" id="indicator">
-                                <label for="indicator">インジケータ</label>
-                            </div>
-        
-                            <div>
-                                <input type="checkbox" name="caption" id="caption">
-                                <label for="caption">説明</label>
-                            </div>
-        
-                            <div>
-                                <input type="checkbox" name="crossfade" id="crossfade">
-                                <label for="crossfade">クロスフェード</label>
-                            </div>
-                            
-                            <div>
-                                <label for="count">スライドの数</label>
-                                <input type="number" name="count" value="1" id="slideCnt">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Accordion Item #2
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#settingsList">
-                        <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"  data-bs-parent="#settingsList">
-                        <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <h2>出力</h2>
+            <textarea name="output" id="outputArea" cols="80" rows="30"></textarea>
         </div>
     </div>
-    <p>
-        <h2>出力</h2>
-        <textarea name="output" id="outputArea" cols="200" rows="30"></textarea>
-    </p>
+    <div class="right">
+        <h2>プレビュー</h2>
+        <textarea cols="80"></textarea>
+    </div>
 
-    <!-- JQuery-->>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <script src="js/carousel.js"></script>
     <script src="js/text.js"></script>
