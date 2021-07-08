@@ -37,6 +37,12 @@ function closeAccordion() {
     }
 }
 
+function copyOutputCode() {
+    var targetCode = document.getElementById("outputArea");
+    targetCode.select();
+    document.execCommand("Copy");
+}
+
 //更新確認
 const observer = new MutationObserver(changeCategory);
 

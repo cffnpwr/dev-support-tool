@@ -133,12 +133,11 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOnePic">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnePic" aria-expanded="true" aria-controls="collapseOnePic">
-                            はげ
+                            Carousel
                         </button>
                     </h2>
                     <div id="collapseOnePic" class="accordion-collapse collapse" aria-labelledby="headingOnePic" data-bs-parent="#settingsListPic">
                         <div id="carousel" class="accordion-body">
-                            <h2>設定</h2>
                             <div>
                                 <input type="checkbox" name="controle" id="controle">
                                 <label for="controle">コントロール</label>
@@ -160,8 +159,7 @@
                             </div>
                             
                             <div>
-                                <label for="count">スライドの数</label>
-                                <input type="number" name="count" value="1" id="slideCnt">
+                                <input type="number" name="count" id="slideCnt" placeholder="スライドの数">
                             </div>
                         </div>
                     </div>
@@ -169,12 +167,12 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingTwoPic">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoPic" aria-expanded="false" aria-controls="collapseTwoPic">
-                            Accordion Item #2
+                            Card
                         </button>
                     </h2>
                     <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic" data-bs-parent="#settingsListPic">
-                        <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div id="card" class="accordion-body">
+                            
                         </div>
                     </div>
                 </div>
@@ -195,6 +193,7 @@
     </div>
     <p>
         <h2>出力</h2>
+        <button class="btn btn-outline-dark" onclick="copyOutputCode()">Copy!</button>
         <textarea name="output" id="outputArea" cols="200" rows="30"></textarea>
     </p>
 
