@@ -1,0 +1,6 @@
+.accordion{
+    height: 60vh;
+}
+.scroll{
+    overflow-y: auto;
+}
