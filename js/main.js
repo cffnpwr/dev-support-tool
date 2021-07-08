@@ -5,6 +5,11 @@ function changeCategory() {
 
     if(openedCategory != null) {
         const settingsCategoryId = openedCategory.children[0].getAttribute("id");
+        const allCategory = document.getElementsByClassName("accordion-body");
+
+        for (const key in allCategory) {
+            allCategory[key].onchange = null;
+        }
 
         switch (settingsCategoryId) {
             case "carousel":
