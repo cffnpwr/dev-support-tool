@@ -192,8 +192,10 @@
         </div>
     </div>
     <p>
-        <h2>出力</h2>
-        <button class="btn btn-outline-dark" onclick="copyOutputCode()">Copy!</button>
+        <h2>
+            <label for="copyBtn">出力コード</label>
+            <button id="copyBtn" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="クリップボードにコピー" onclick="copyOutputCode(); this.setAttribute('data-bs-original-title', 'コピーしました'); bootstrap.Tooltip.getInstance(this).show(); this.setAttribute('data-bs-original-title', 'クリップボードにコピー')">Copy!</button>
+        </h2>
         <textarea name="output" id="outputArea" cols="200" rows="30"></textarea>
     </p>
 

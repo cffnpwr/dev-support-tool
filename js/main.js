@@ -1,12 +1,16 @@
 window.onload = changeCategory;
 
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 function changeCategory() {
     const openedCategory = document.getElementsByClassName("accordion-collapse collapse show")[0];
 
     if(openedCategory != null) {
         const settingsCategoryId = openedCategory.children[0].getAttribute("id");
         const allCategory = document.getElementsByClassName("accordion-body");
-        console.log(openedCategory);
 
         for (const key in allCategory) {
             allCategory[key].onchange = null;
