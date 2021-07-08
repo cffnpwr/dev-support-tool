@@ -72,7 +72,6 @@ function genCarouselCode(slideCnt, ignoreType) {
     }
     
     for (const key in ignoreType) {
-        console.log(ignoreType[key])
         switch (ignoreType[key]) {
             case "controle":
                 controle = "";
