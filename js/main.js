@@ -26,6 +26,11 @@ function changeCategory() {
                 document.getElementById(settingsCategoryId).onchange = genText;
                 genText();
                 break;
+
+            case "card":
+                document.getElementById(settingsCategoryId).onchange = genCard;
+                genCard();
+                break;
         
             default:
                 break;
