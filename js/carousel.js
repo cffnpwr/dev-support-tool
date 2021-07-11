@@ -17,6 +17,7 @@ function genCarousel() {
     slideCnt = document.getElementById("slideCnt").value;
 
     document.getElementById("outputArea").value = genCarouselCode(slideCnt, carouselType);
+    changeOutputText();
 }
 
 function genCarouselCode(slideCnt, ignoreType) {

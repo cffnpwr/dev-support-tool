@@ -38,6 +38,11 @@ function changeCategory() {
     }
 }
 
+function changeOutputText() {
+    let outputText = document.getElementById("outputArea").value;
+    document.getElementById("outputAreaDummy").textContent = outputText + '\u200b';
+}
+
 function closeAccordion() {
     const openedAccordion = document.getElementsByClassName("accordion-collapse collapse show");
 

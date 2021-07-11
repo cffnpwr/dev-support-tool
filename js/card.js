@@ -22,6 +22,7 @@ function genCard() {
     }
 
     document.getElementById("outputArea").value = genCardCode(cardOptions);
+    changeOutputText();
 }
 
 function genCardCode(cardOptions) {
