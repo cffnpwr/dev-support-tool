@@ -12,7 +12,7 @@ function genText() {
     
     const inputText = document.getElementById("inputMessage").value;
 
-    const outputCode = "<div class="+ color + " " + bgc + " " + pos + " " + align + " " + shadow + " " + size + " " + weight + ">" + inputText + "</div>";
+    const outputCode = '<div class="'+ color + ' ' + bgc + ' ' + pos + ' ' + align + ' ' + shadow + ' ' + size + ' ' + weight + '">' + inputText + '</div>';
 
     document.getElementById("outputArea").value = outputCode;
 }
