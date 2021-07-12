@@ -91,7 +91,7 @@ function genCarouselCode(slideCnt, ignoreType) {
     }
 
     const carousel = '\
-<div id="carouselSlide" class="container-fluid carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
+<div id="carouselSlide" class="container carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
 \t<div class="carousel-inner">\n'
     + slides + 
 '\t</div>\n'
