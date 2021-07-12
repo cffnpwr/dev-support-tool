@@ -14,8 +14,7 @@ function genText() {
 
     const outputCode = '<div class="'+ color + ' ' + bgc + ' ' + pos + ' ' + align + ' ' + shadow + ' ' + size + ' ' + weight + '">\n\t' + inputText + '\n</div>';
 
-    document.getElementById("outputArea").value = outputCode;
-    changeOutputText();
+    genCode(outputCode);
 }
 
 // 文字色

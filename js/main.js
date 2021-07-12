@@ -38,9 +38,9 @@ function changeCategory() {
     }
 }
 
-function changeOutputText() {
-    let outputText = document.getElementById("outputArea").value;
-    document.getElementById("outputAreaDummy").textContent = outputText + '\u200b';
+function genCode(htmlCode) {
+    document.getElementById("outputArea").textContent = htmlCode;
+    genPreview();
 }
 
 function closeAccordion() {

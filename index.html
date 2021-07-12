@@ -191,21 +191,23 @@
                                 <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
                                     data-bs-parent="#settingsListPic">
                                     <div id="card" class="accordion-body">
-                                        <div>
-                                            <input type="checkbox" name="titleChk" id="cardTitleChk">
-                                            <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力" disabled>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
-                                            <input type="text" name="subtitleTxt" id="cardSubtitleTxt" placeholder="サブタイトルを入力" disabled>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="textChk" id="cardTextChk" >
-                                            <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;" placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
-                                            <label for="cardImgChk">画像を配置</label>
+                                        <div onchange="changeState()">
+                                            <div>
+                                                <input type="checkbox" name="titleChk" id="cardTitleChk">
+                                                <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力" disabled>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
+                                                <input type="text" name="subtitleTxt" id="cardSubtitleTxt" placeholder="サブタイトルを入力" disabled>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="textChk" id="cardTextChk" >
+                                                <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;" placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
+                                            </div>
+                                            <div>
+                                                <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
+                                                <label for="cardImgChk">画像を配置</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -233,15 +235,14 @@
                     <label for="copyBtn">出力コード</label>
                     <button id="copyBtn" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="クリップボードにコピー" onclick="copyOutputCode(); this.setAttribute('data-bs-original-title', 'コピーしました'); bootstrap.Tooltip.getInstance(this).show(); this.setAttribute('data-bs-original-title', 'クリップボードにコピー')">Copy!</button>
                 </h2>
-                <div style="position: relative;">
-                    <div id="outputAreaDummy" aria-hidden="true"></div>
-                    <textarea name="output" id="outputArea"></textarea>
+                <div>
+                    <div id="outputArea"></div>
                 </div>
             </div>
         </div>
-        <div class="right width">
+        <div class="right width container" id="previewDiv">
             <h2>プレビュー</h2>
-            <textarea style="width: 100%;"></textarea>
+            <!-- <div id="previewDiv"></div> -->
         </div>
 
 
@@ -256,6 +257,7 @@
         <script src="js/carousel.js"></script>
         <script src="js/text.js"></script>
         <script src="js/card.js"></script>
+        <script src="js/preview.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

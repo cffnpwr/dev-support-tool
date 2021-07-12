@@ -16,8 +16,7 @@ function genCarousel() {
     }
     slideCnt = document.getElementById("slideCnt").value;
 
-    document.getElementById("outputArea").value = genCarouselCode(slideCnt, carouselType);
-    changeOutputText();
+    genCode(genCarouselCode(slideCnt, carouselType));
 }
 
 function genCarouselCode(slideCnt, ignoreType) {
@@ -62,12 +61,12 @@ function genCarouselCode(slideCnt, ignoreType) {
         if (i < 1) {
             slides += '\
 \t\t<div class="carousel-item active">\n\
-\t\t\tスライドの中身\n ' + caption + '\
+\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto">\n ' + caption + '\
 \t\t</div>\n ';
         }else{
             slides += '\
 \t\t<div class="carousel-item">\n\
-\t\t\tスライドの中身\n' + caption + ' \
+\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto">\n' + caption + ' \
 \t\t</div>\n ';
         }
     }
@@ -92,7 +91,7 @@ function genCarouselCode(slideCnt, ignoreType) {
     }
 
     const carousel = '\
-<div id="carouselSlide" class="carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
+<div id="carouselSlide" class="container-fluid carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
 \t<div class="carousel-inner">\n'
     + slides + 
 '\t</div>\n'

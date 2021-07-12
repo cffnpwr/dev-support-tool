@@ -11,18 +11,10 @@ function genCard() {
     for (const key in optionList) {
         if (document.getElementById(optionList[key] + "Chk").checked) {
             cardOptions.push(optionList[key]);
-            if (document.getElementById(optionList[key] + "text") != null) {
-                document.getElementById(optionList[key] + "Txt").removeAttribute('disabled');
-            }
-        }else{
-            if (document.getElementById(optionList[key] + "text") != null) {
-                document.getElementById(optionList[key] + "Txt").setAttribute('disabled', true);
-            }
         }
     }
 
-    document.getElementById("outputArea").value = genCardCode(cardOptions);
-    changeOutputText();
+    genCode(genCardCode(cardOptions));
 }
 
 function genCardCode(cardOptions) {
@@ -61,4 +53,20 @@ function genCardCode(cardOptions) {
 
     return cardCode;
     
+}
+
+function changeState() {
+    const optionList = [
+        "cardTitle",
+        "cardSubtitle",
+        "cardText"
+    ];
+
+    for (const key in optionList) {
+        if (document.getElementById(optionList[key] + "Chk").checked) {
+            document.getElementById(optionList[key] + "Txt").removeAttribute('disabled');
+        }else{
+            document.getElementById(optionList[key] + "Txt").setAttribute('disabled', true);
+        }
+    }
 }
