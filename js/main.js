@@ -52,9 +52,16 @@ function closeAccordion() {
 }
 
 function copyOutputCode() {
-    var targetCode = document.getElementById("outputArea");
-    targetCode.select();
-    document.execCommand("Copy");
+    var targetCode = document.getElementById("outputArea").textContent;
+
+    var listener = function(e){
+        e.clipboardData.setData("text/plain" , targetCode);    
+        e.preventDefault();
+        document.removeEventListener("copy", listener);
+    }
+
+    document.addEventListener("copy" , listener);
+    document.execCommand("copy");
 }
 
 //更新確認
