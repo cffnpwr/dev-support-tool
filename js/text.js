@@ -9,10 +9,10 @@ function genText() {
     const shadow = genShadowCode();
     const size = genFontSizeCode();
     const weight = genFontWeightCode();
-    
-    const inputText = document.getElementById("inputMessage").value;
 
-    const outputCode = '<div class="'+ color + ' ' + bgc + ' ' + pos + ' ' + align + ' ' + shadow + ' ' + size + ' ' + weight + '">\n\t' + inputText + '\n</div>';
+    const inputText = h(document.getElementById("inputMessage").value);
+
+    const outputCode = '<div class="' + color + ' ' + bgc + ' ' + pos + ' ' + align + ' ' + shadow + ' ' + size + ' ' + weight + '">\n\t' + inputText + '\n</div>';
 
     genCode(outputCode);
 }
@@ -23,7 +23,7 @@ function genTextColorCode() {
 
     const selectedIndex = selectTextColor.selectedIndex;
     const selectedValue = selectTextColor.options[selectedIndex].value;
-    
+
     const outputTextColor = "text-" + selectedValue + " container";
 
     return outputTextColor;
@@ -35,7 +35,7 @@ function genBackGroundColorCode() {
 
     const selectedIndex = selectBackGroundColor.selectedIndex;
     const selectedValue = selectBackGroundColor.options[selectedIndex].value;
-    
+
     const outputBackGroundColor = "bg-" + selectedValue;
 
     return outputBackGroundColor;
