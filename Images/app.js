@@ -104,7 +104,7 @@ selectImagePlacement.onchange = event => {
 let showMessage = () => {
   let textbox = document.getElementById("inputMessage");
   // 出力される内容
-  let inputValue = "<img src=" + textbox.value + ".jpg class=" + outputImageRuledLineColor +" "+ outputImageShadow +" "+ outputImagePlacement +" alt=" + textbox.value +" "+ outputImageSizeChange +">"
+  let inputValue = "<img src=kousen-image/" + textbox.value + ".jpg class=" + outputImageRuledLineColor +" "+ outputImageShadow +" "+ outputImagePlacement +" alt=" + textbox.value +" "+ outputImageSizeChange +">"
 
 
   // 出力メッセージを生成
