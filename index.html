@@ -1,293 +1,306 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!-- リンク先からbootstrapを入手 ←ステマかこれ？ by CaffeinePower-->
-        <link href="css/common.css" rel="stylesheet"><!-- 共通 -->
-        <link href="css/tab.css" rel="stylesheet"><!-- タブ -->
-        <link href="css/accordion.css" rel="stylesheet"><!-- アコーディオン -->
-        <link href="css/output.css" rel="stylesheet"><!-- 出力 -->
-        <link href="css/preview.css" rel="stylesheet"><!-- プレビュー -->
 
-        <title>開発支援ツール</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- リンク先からbootstrapを入手 ←ステマかこれ？ by CaffeinePower-->
+    <link href="css/common.css" rel="stylesheet"><!-- 共通 -->
+    <link href="css/tab.css" rel="stylesheet"><!-- タブ -->
+    <link href="css/accordion.css" rel="stylesheet"><!-- アコーディオン -->
+    <link href="css/output.css" rel="stylesheet"><!-- 出力 -->
+    <link href="css/preview.css" rel="stylesheet"><!-- プレビュー -->
 
-    <body class="mx-auto">
-        <h1 class="p-4">開発支援ツール</h1>
-        <div class="left width container" style="height: auto;">
-            <div class="container">
-                <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#text-tab" role="tab"
-                            aria-controls="text-tab" aria-selected="true" onclick="closeAccordion()">テキスト</a>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#picture-tab" role="tab"
-                            aria-controls="picture-tab" aria-selected="false" onclick="closeAccordion()">写真</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="settingsTabs">
-                    <div class="tab-pane fade show active" id="text-tab" role="tabpanel" aria-labelledby="text-tab">
-                        <div class="accordion" id="settingsListText">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOneText"><div class=text-dark container bg-light  text-start  fs-3 fw-3></div>
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOneText" aria-expanded="false" aria-controls="collapseOneText">
-                                        文字
-                                    </button>
-                                </h2>
-                                <div id="collapseOneText" class="accordion-collapse collapse" aria-labelledby="headingOneText"
-                                    data-bs-parent="#settingsListText">
-                                    <div class="accordion-body container" id="text">
-                                        <div class="p-2">
-                                            <input type="text" id="inputMessage" placeholder="テキストを入力してください">
-                                        </div>
+    <title>開発支援ツール</title>
+</head>
 
-                                        <div class="p-2">
-                                            <label for="textColor">文字色</label>
-                                            <select id="textColor">
-                                                <option value="dark" selected>Dark</option>
-                                                <option value="light">Light</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="secondary">Secondary</option>
-                                                <option value="success">Success</option>
-                                                <option value="info">Info</option>
-                                                <option value="warning">Warning</option>
-                                                <option value="danger">Danger</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="backGroundColor">背景色</label>
-                                            <select id="rowColumnsBackGroundColor">
-                                                <option value="dark">Dark</option>
-                                                <option value="light" selected>Light</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="secondary">Secondary</option>
-                                                <option value="success">Success</option>
-                                                <option value="info">Info</option>
-                                                <option value="warning">Warning</option>
-                                                <option value="danger">Danger</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="position">位置ヘルパー</label>
-                                            <select id="position">
-                                                <option value="" selected>固定しない</option>
-                                                <option value="fixed-top">最上部に固定</option>
-                                                <option value="fixed-bottom">最下部に固定</option>
-                                                <option value="sticky-top">最上部に達すると固定</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="alignment">文字の配置</label>
-                                            <select id="alignment">
-                                                <option value="text-start" selected>行頭揃え</option>
-                                                <option value="text-center">中央揃え</option>
-                                                <option value="text-end">行末揃え</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="shadow">影の追加</label>
-                                            <select id="shadow">
-                                                <option value="" selected>影なし</option>
-                                                <option value="shadow">影あり</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="fontSize">文字サイズ</label>
-                                            <select id="fontSize">
-                                                <option value="fs-1">極大</option>
-                                                <option value="fs-2">大</option>
-                                                <option value="fs-3" selected>中</option>
-                                                <option value="fs-4">小</option>
-                                                <option value="fs-5">極小</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="p-2">
-                                            <label for="fontWeight">文字の太さ</label>
-                                            <select id="fontWeight">
-                                                <option value="fw-bold">極太</option>
-                                                <option value="fw-bolder">太め</option>
-                                                <option value="fw-normal" selected>中</option>
-                                                <option value="fw-light">細め</option>
-                                                <option value="fw-lighter">極細</option>
-                                            </select>
-                                        </div>
+<body class="mx-auto">
+    <h1 class="p-4">開発支援ツール</h1>
+    <div class="left width container" style="height: auto;">
+        <div class="container">
+            <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#text-tab" role="tab"
+                        aria-controls="text-tab" aria-selected="true" onclick="closeAccordion()">テキスト</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#picture-tab" role="tab"
+                        aria-controls="picture-tab" aria-selected="false" onclick="closeAccordion()">写真</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="settingsTabs">
+                <div class="tab-pane fade show active" id="text-tab" role="tabpanel" aria-labelledby="text-tab">
+                    <div class="accordion" id="settingsListText">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOneText">
+                                <div class=text-dark container bg-light text-start fs-3 fw-3></div>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOneText" aria-expanded="false"
+                                    aria-controls="collapseOneText">
+                                    文字
+                                </button>
+                            </h2>
+                            <div id="collapseOneText" class="accordion-collapse collapse"
+                                aria-labelledby="headingOneText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body container" id="text">
+                                    <div class="p-2">
+                                        <input type="text" id="inputMessage" placeholder="テキストを入力してください">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThreeText">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThreeText" aria-expanded="false" aria-controls="collapseThreeText">
-                                        グリッド
-                                    </button>
-                                </h2>
-                                <div id="collapseThreeText" class="accordion-collapse collapse" aria-labelledby="headingThreeText"
-                                    data-bs-parent="#settingsListText">
-                                    <div class="accordion-body" id = "rowColumns">
-                                        <div>
-                                            <label for="cutCnt">分割の数</label>
-                                            <input type="number" name="count" id="cutCnt" placeholder="分割の数" value="1">
-                                        </div>
 
-                                        <div>
-                                            <label for="yousoCnt">要素の数</label>
-                                            <input type="number" name="count" id="yousoCnt" placeholder="要素の数" value="1">
-                                        </div>
+                                    <div class="p-2">
+                                        <label for="textColor">文字色</label>
+                                        <select id="textColor">
+                                            <option value="dark" selected>Dark</option>
+                                            <option value="light">Light</option>
+                                            <option value="primary">Primary</option>
+                                            <option value="secondary">Secondary</option>
+                                            <option value="success">Success</option>
+                                            <option value="info">Info</option>
+                                            <option value="warning">Warning</option>
+                                            <option value="danger">Danger</option>
+                                        </select>
+                                    </div>
 
-                                        <div class="p-2">
-                                            <label for="backGroundColor">背景色</label>
-                                            <select id="backGroundColor">
-                                                <option value="dark">Dark</option>
-                                                <option value="light" selected>Light</option>
-                                                <option value="primary">Primary</option>
-                                                <option value="secondary">Secondary</option>
-                                                <option value="success">Success</option>
-                                                <option value="info">Info</option>
-                                                <option value="warning">Warning</option>
-                                                <option value="danger">Danger</option>
-                                            </select>
-                                        </div>
+                                    <div class="p-2">
+                                        <label for="backGroundColor">背景色</label>
+                                        <select id="backGroundColor">
+                                            <option value="null" selected>なし</option>
+                                            <option value="dark">Dark</option>
+                                            <option value="light">Light</option>
+                                            <option value="primary">Primary</option>
+                                            <option value="secondary">Secondary</option>
+                                            <option value="success">Success</option>
+                                            <option value="info">Info</option>
+                                            <option value="warning">Warning</option>
+                                            <option value="danger">Danger</option>
+                                        </select>
+                                    </div>
 
-                                        <div>
-                                            <input type="checkbox" name="border" id="border">
-                                            <label for="border">枠</label>
-                                        </div>
+                                    <div class="p-2">
+                                        <label for="position">位置ヘルパー</label>
+                                        <select id="position">
+                                            <option value="" selected>固定しない</option>
+                                            <option value="sticky-top">最上部に達すると固定</option>
+                                        </select>
+                                    </div>
 
+                                    <div class="p-2">
+                                        <label for="alignment">文字の配置</label>
+                                        <select id="alignment">
+                                            <option value="text-start" selected>行頭揃え</option>
+                                            <option value="text-center">中央揃え</option>
+                                            <option value="text-end">行末揃え</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <label for="shadow">影の追加</label>
+                                        <select id="shadow">
+                                            <option value="" selected>影なし</option>
+                                            <option value="shadow">影あり</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <label for="fontSize">文字サイズ</label>
+                                        <select id="fontSize">
+                                            <option value="fs-1">極大</option>
+                                            <option value="fs-2">大</option>
+                                            <option value="fs-3" selected>中</option>
+                                            <option value="fs-4">小</option>
+                                            <option value="fs-5">極小</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <label for="fontWeight">文字の太さ</label>
+                                        <select id="fontWeight">
+                                            <option value="fw-bold">極太</option>
+                                            <option value="fw-bolder">太め</option>
+                                            <option value="fw-normal" selected>中</option>
+                                            <option value="fw-light">細め</option>
+                                            <option value="fw-lighter">極細</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThreeText">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThreeText" aria-expanded="false"
+                                    aria-controls="collapseThreeText">
+                                    グリッド
+                                </button>
+                            </h2>
+                            <div id="collapseThreeText" class="accordion-collapse collapse"
+                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body" id="rowColumns">
+                                    <div>
+                                        <label for="cutCnt">分割の数</label>
+                                        <input type="number" name="count" id="cutCnt" placeholder="分割の数" value="1">
+                                    </div>
+
+                                    <div>
+                                        <label for="yousoCnt">要素の数</label>
+                                        <input type="number" name="count" id="yousoCnt" placeholder="要素の数" value="1">
+                                    </div>
+
+                                    <div class="p-2">
+                                        <label for="rowColumnsBackGroundColor">背景色</label>
+                                        <select id="rowColumnsBackGroundColor">
+                                            <option value="null" selected>なし</option>
+                                            <option value="dark">Dark</option>
+                                            <option value="light">Light</option>
+                                            <option value="primary">Primary</option>
+                                            <option value="secondary">Secondary</option>
+                                            <option value="success">Success</option>
+                                            <option value="info">Info</option>
+                                            <option value="warning">Warning</option>
+                                            <option value="danger">Danger</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="border" id="border">
+                                        <label for="border">枠</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane fade show" id="picture-tab" role="tabpanel" aria-labelledby="picture-tab">
-                        <div class="accordion" id="settingsListPic">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOnePic">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseOnePic" aria-expanded="true" aria-controls="collapseOnePic">
-                                        スライドショー
-                                    </button>
-                                </h2>
-                                <div id="collapseOnePic" class="accordion-collapse collapse" aria-labelledby="headingOnePic"
-                                    data-bs-parent="#settingsListPic">
-                                    <div id="carousel" class="accordion-body">
-                                        <div>
-                                            <input type="checkbox" name="controle" id="controle">
-                                            <label for="controle">コントロール</label>
-                                        </div>
+                </div>
+                <div class="tab-pane fade show" id="picture-tab" role="tabpanel" aria-labelledby="picture-tab">
+                    <div class="accordion" id="settingsListPic">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOnePic">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOnePic" aria-expanded="true"
+                                    aria-controls="collapseOnePic">
+                                    スライドショー
+                                </button>
+                            </h2>
+                            <div id="collapseOnePic" class="accordion-collapse collapse" aria-labelledby="headingOnePic"
+                                data-bs-parent="#settingsListPic">
+                                <div id="carousel" class="accordion-body">
+                                    <div>
+                                        <input type="checkbox" name="controle" id="controle">
+                                        <label for="controle">コントロール</label>
+                                    </div>
 
-                                        <div>
-                                            <input type="checkbox" name="indicator" id="indicator">
-                                            <label for="indicator">インジケータ</label>
-                                        </div>
+                                    <div>
+                                        <input type="checkbox" name="indicator" id="indicator">
+                                        <label for="indicator">インジケータ</label>
+                                    </div>
 
-                                        <div>
-                                            <input type="checkbox" name="caption" id="caption">
-                                            <label for="caption">説明</label>
-                                        </div>
+                                    <div>
+                                        <input type="checkbox" name="caption" id="caption">
+                                        <label for="caption">説明</label>
+                                    </div>
 
-                                        <div>
-                                            <input type="checkbox" name="crossfade" id="crossfade">
-                                            <label for="crossfade">クロスフェード</label>
-                                        </div>
+                                    <div>
+                                        <input type="checkbox" name="crossfade" id="crossfade">
+                                        <label for="crossfade">クロスフェード</label>
+                                    </div>
 
+                                    <div>
+                                        <label for="slideCnt">スライドの数</label>
+                                        <input type="number" name="count" id="slideCnt" placeholder="スライドの数" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwoPic">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwoPic" aria-expanded="false"
+                                    aria-controls="collapseTwoPic">
+                                    カード
+                                </button>
+                            </h2>
+                            <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
+                                data-bs-parent="#settingsListPic">
+                                <div id="card" class="accordion-body">
+                                    <div onchange="changeState()">
                                         <div>
-                                            <label for="slideCnt">スライドの数</label>
-                                            <input type="number" name="count" id="slideCnt" placeholder="スライドの数" value="1">
+                                            <input type="checkbox" name="titleChk" id="cardTitleChk">
+                                            <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力"
+                                                disabled>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
+                                            <input type="text" name="subtitleTxt" id="cardSubtitleTxt"
+                                                placeholder="サブタイトルを入力" disabled>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="textChk" id="cardTextChk">
+                                            <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;"
+                                                placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
+                                            <label for="cardImgChk">画像を配置</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwoPic">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwoPic" aria-expanded="false" aria-controls="collapseTwoPic">
-                                        カード
-                                    </button>
-                                </h2>
-                                <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
-                                    data-bs-parent="#settingsListPic">
-                                    <div id="card" class="accordion-body">
-                                        <div onchange="changeState()">
-                                            <div>
-                                                <input type="checkbox" name="titleChk" id="cardTitleChk">
-                                                <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力" disabled>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
-                                                <input type="text" name="subtitleTxt" id="cardSubtitleTxt" placeholder="サブタイトルを入力" disabled>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="textChk" id="cardTextChk" >
-                                                <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;" placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
-                                            </div>
-                                            <div>
-                                                <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
-                                                <label for="cardImgChk">画像を配置</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThreePic">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThreePic" aria-expanded="false" aria-controls="collapseThreePic">
-                                        設定3
-                                    </button>
-                                </h2>
-                                <div id="collapseThreePic" class="accordion-collapse collapse" aria-labelledby="headingThreePic"
-                                    data-bs-parent="#settingsListPic">
-                                    <div class="accordion-body">
-                                        設定項目
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThreePic">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThreePic" aria-expanded="false"
+                                    aria-controls="collapseThreePic">
+                                    設定3
+                                </button>
+                            </h2>
+                            <div id="collapseThreePic" class="accordion-collapse collapse"
+                                aria-labelledby="headingThreePic" data-bs-parent="#settingsListPic">
+                                <div class="accordion-body">
+                                    設定項目
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <h2 class="p-3">
-                    <label for="copyBtn">出力コード</label>
-                    <button id="copyBtn" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="クリップボードにコピー" onclick="copyOutputCode(); this.setAttribute('data-bs-original-title', 'コピーしました'); bootstrap.Tooltip.getInstance(this).show(); this.setAttribute('data-bs-original-title', 'クリップボードにコピー')">Copy!</button>
-                </h2>
-                <div>
-                    <div id="outputArea"></div>
-                </div>
+        </div>
+        <div class="container">
+            <h2 class="p-3">
+                <label for="copyBtn">出力コード</label>
+                <button id="copyBtn" class="btn btn-outline-dark" data-bs-toggle="tooltip" data-bs-placement="top"
+                    title="クリップボードにコピー"
+                    onclick="copyOutputCode(); this.setAttribute('data-bs-original-title', 'コピーしました'); bootstrap.Tooltip.getInstance(this).show(); this.setAttribute('data-bs-original-title', 'クリップボードにコピー')">Copy!</button>
+            </h2>
+            <div>
+                <div id="outputArea"></div>
             </div>
         </div>
-        <div class="right width container" id="previewDiv">
-            <h2>プレビュー</h2>
-            <!-- <div id="previewDiv"></div> -->
-        </div>
+    </div>
+    <div class="right width container" id="previewDiv">
+        <h2>プレビュー</h2>
+        <!-- <div id="previewDiv"></div> -->
+    </div>
 
 
-        <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-            integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
-        <script src="js/rowColumns.js"></script>
-        <script src="js/carousel.js"></script>
-        <script src="js/text.js"></script>
-        <script src="js/card.js"></script>
-        <script src="js/preview.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+    <script src="js/rowColumns.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/text.js"></script>
+    <script src="js/card.js"></script>
+    <script src="js/preview.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>

@@ -36,9 +36,13 @@ function genBackGroundColorCode() {
     const selectedIndex = selectBackGroundColor.selectedIndex;
     const selectedValue = selectBackGroundColor.options[selectedIndex].value;
 
-    const outputBackGroundColor = "bg-" + selectedValue;
+    if (selectedValue == "null") {
+        return;
+    } else {
+        const outputBackGroundColor = "bg-" + selectedValue;
 
-    return outputBackGroundColor;
+        return outputBackGroundColor;
+    }
 }
 
 // 位置ヘルパー
