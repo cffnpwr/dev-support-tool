@@ -31,10 +31,15 @@ function changeCategory() {
                 document.getElementById(settingsCategoryId).onchange = genCard;
                 genCard();
                 break;
-            
+
             case "rowColumns":
                 document.getElementById(settingsCategoryId).onchange = genRowColumns;
                 genRowColumns();
+                break;
+
+            case "accordion":
+                document.getElementById(settingsCategoryId).onchange = genAccordion;
+                genAccordion();
                 break;
 
             default:

@@ -130,15 +130,15 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThreeText">
+                            <h2 class="accordion-header" id="headingTowText">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThreeText" aria-expanded="false"
-                                    aria-controls="collapseThreeText">
+                                    data-bs-target="#collapseTwoText" aria-expanded="false"
+                                    aria-controls="collapseTwoText">
                                     グリッド
                                 </button>
                             </h2>
-                            <div id="collapseThreeText" class="accordion-collapse collapse"
-                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
+                            <div id="collapseTwoText" class="accordion-collapse collapse"
+                                aria-labelledby="headingTwoText" data-bs-parent="#settingsListText">
                                 <div class="accordion-body" id="rowColumns">
                                     <div>
                                         <label for="cutCnt">分割の数</label>
@@ -170,6 +170,30 @@
                                         <label for="border">枠</label>
                                     </div>
 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThreeText">
+                                <div class=text-dark container bg-light text-start fs-3 fw-3></div>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThreeText" aria-expanded="false"
+                                    aria-controls="collapseThreeText">
+                                    アコーディオン
+                                </button>
+                            </h2>
+                            <div id="collapseThreeText" class="accordion-collapse collapse"
+                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body container" id="accordion">
+                                    <div>
+                                        <label for="accrdnCnt">アコーディオンの数</label>
+                                        <input type="number" name="accordionCount" id="accrdnCnt" value="1">
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="isFlush" id="isFlush">
+                                        <label for="isFlush">枠なし</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -296,6 +320,7 @@
         crossorigin="anonymous"></script>
 
     <script src="js/rowColumns.js"></script>
+    <script src="js/accordion.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/text.js"></script>
     <script src="js/card.js"></script>
