@@ -1,7 +1,7 @@
 // 入力フォーム
 
 //自動更新
-function genText() {
+function genImage() {
     const color = genImageRuledLineColorCode();
     const shadow = genImageShadowCode();
     const size = genImageSizeChangeCode();
