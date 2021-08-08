@@ -279,13 +279,70 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThreePic" aria-expanded="false"
                                     aria-controls="collapseThreePic">
-                                    設定3
+                                    画像編集
                                 </button>
                             </h2>
                             <div id="collapseThreePic" class="accordion-collapse collapse"
                                 aria-labelledby="headingThreePic" data-bs-parent="#settingsListPic">
                                 <div class="accordion-body">
-                                    設定項目
+                                                                        <div class="p-2">
+                                        <input type="text" id="inputImageMessage" placeholder="ファイル名を入力してください">
+                                    </div>
+  
+                                    <div class="p-2">
+  
+                                        罫線の色:
+                                        <select id="imageRuledLineColor">
+                                            <option value="dark">Dark</option>
+                                            <option value="light" selected>Light</option>
+                                        <option value="primary">Primary</option>
+                                        <option value="secondary">Secondary</option>
+                                        <option value="success">Success</option>
+                                        <option value="info">Info</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="danger">Danger</option>
+                                        </select>
+                                    
+                                    </div>
+                                
+                                
+                                
+                                    <div class=p-2>
+                                
+                                        影の追加:
+                                        <select id="imageShadow">
+                                            <option value="" selected>影なし</option>
+                                            <option value="shadow">影あり</option>
+                                        </select>
+                                    
+                                    </div>
+                                
+                                
+                                
+                                    <div class="p-2">
+                                
+                                        サイズ:
+                                        <select id="imageSizeChange">
+                                            <option value='width="2.5%"'>25%</option>
+                                            <option value='width="5"'>50%</option>
+                                            <option value='width="7.5%"'>75%</option>
+                                            <option value='width="10"' selected>100%</option>
+                                        </select>
+                                
+                                    </div><br>
+                                
+                                
+                                
+                                    <div class="p-2">
+                                
+                                        画像の配置:
+                                        <select id="imagePlacement">
+                                            <option value="float-start" selected>左揃え</option>
+                                            <option value="mx-auto d-block">中央揃え</option>
+                                            <option value="float-end">右揃え</option>
+                                        </select>
+                                
+                                    </div><br>
                                 </div>
                             </div>
                         </div>
