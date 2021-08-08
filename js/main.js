@@ -41,6 +41,11 @@ function changeCategory() {
                 document.getElementById(settingsCategoryId).onchange = genAccordion;
                 genAccordion();
                 break;
+                
+            case "image":
+                document.getElementById(settingsCategoryId).onchange = genImage;
+                genImage();
+                break;
 
             default:
                 break;
