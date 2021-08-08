@@ -9,7 +9,7 @@ function genImage() {
 
     const inputText = h(document.getElementById("inputImageMessage").value);
 
-    const outputCode = '<img src=kousen-image/"' + inputText + '.jpg class=' + color + ' ' + pos + ' ' + shadow + ' ' + size + '">\n\t';
+    const outputCode = '<img src=kousen-image/' + inputText + '.jpg class="' + color + ' ' + pos + ' ' + shadow + '" ' + size + '>\n\t';
 
     genCode(outputCode);
 }
@@ -21,7 +21,7 @@ function genImageRuledLineColorCode() {
     const selectedIndex = selectImageRuledLineColor.selectedIndex;
     const selectedValue = selectImageRuledLineColor.options[selectedIndex].value;
 
-    const outputImageRuledLineColor = "border-" + selectedValue + " container";
+    const outputImageRuledLineColor = "border-" + selectedValue + " border";
 
     return outputImageRuledLineColor;
 }
