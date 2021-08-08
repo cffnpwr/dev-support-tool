@@ -47,6 +47,11 @@ function changeCategory() {
                 genImage();
                 break;
 
+            case "breadcrumb":
+                document.getElementById(settingsCategoryId).onchange = genBreadcrumb;
+                genBreadcrumb();
+                break;
+
             default:
                 break;
         }
