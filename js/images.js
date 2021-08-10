@@ -9,7 +9,7 @@ function genImage() {
 
     const inputText = h(document.getElementById("inputImageMessage").value);
 
-    const outputCode = '<img src=kousen-image/' + inputText + '.jpg class="' + color + ' ' + pos + ' ' + shadow + '" ' + size + '>\n\t';
+    const outputCode = '<img src=img/' + inputText + '.jpg class="' + color + ' ' + pos + ' ' + shadow + '" ' + size + '>\n\t';
 
     genCode(outputCode);
 }
