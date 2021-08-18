@@ -34,15 +34,15 @@ function genCarouselCode(slideCnt, ignoreType) {
     let indicators = "";
     for (let i = 0; i < slideCnt; i++) {
         if (i < 1) {
-            indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="'+ i +'" class="active" aria-current="true" aria-label="スライド ' + (i + 1) +'"></button>\n';
-        }else{
-            indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="'+ i +'" aria-label="スライド ' + (i + 1) +'"></button>\n';
+            indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="' + i + '" class="active" aria-current="true" aria-label="スライド ' + (i + 1) + '"></button>\n';
+        } else {
+            indicators += '\t\t<button type="button" data-bs-target="#carouselSlide" data-bs-slide-to="' + i + '" aria-label="スライド ' + (i + 1) + '"></button>\n';
         }
     }
     let indicator = '\
 \t<div class="carousel-indicators">\n'
-    + indicators +
-'\t</div>\n';
+        + indicators +
+        '\t</div>\n';
 
     let slides = "";
     let caption = '\
@@ -61,16 +61,16 @@ function genCarouselCode(slideCnt, ignoreType) {
         if (i < 1) {
             slides += '\
 \t\t<div class="carousel-item active">\n\
-\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto">\n ' + caption + '\
+\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto w-100">\n ' + caption + '\
 \t\t</div>\n ';
-        }else{
+        } else {
             slides += '\
 \t\t<div class="carousel-item">\n\
-\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto">\n' + caption + ' \
+\t\t\t<img src="img/hoge.jpg" class="img-fluid d-block mx-auto w-100">\n' + caption + ' \
 \t\t</div>\n ';
         }
     }
-    
+
     for (const key in ignoreType) {
         switch (ignoreType[key]) {
             case "controle":
@@ -80,11 +80,11 @@ function genCarouselCode(slideCnt, ignoreType) {
             case "indicator":
                 indicator = "";
                 break;
-            
+
             case "crossfade":
                 crossfade = "";
                 break;
-        
+
             default:
                 break;
         }
@@ -93,10 +93,10 @@ function genCarouselCode(slideCnt, ignoreType) {
     const carousel = '\
 <div id="carouselSlide" class="container carousel slide' + crossfade + '" data-bs-ride="carousel">\n\
 \t<div class="carousel-inner">\n'
-    + slides + 
-'\t</div>\n'
-    + controle + indicator +
-'</div>';
+        + slides +
+        '\t</div>\n'
+        + controle + indicator +
+        '</div>';
 
     return carousel;
 }

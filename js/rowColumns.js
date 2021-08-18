@@ -38,7 +38,7 @@ function genRCBackGroundColorCode() {
     const selectedValue = selectBackGroundColor.options[selectedIndex].value;
 
     if (selectedValue == "null") {
-        return;
+        return "";
     } else {
         const outputBackGroundColor = "bg-" + selectedValue;
 
