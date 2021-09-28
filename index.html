@@ -25,16 +25,123 @@
             <ul class="nav nav-tabs nav-pills" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#text-tab" role="tab"
-                        aria-controls="text-tab" aria-selected="true" onclick="closeAccordion()">テキスト</a>
+                        aria-controls="text-tab" aria-selected="true" onclick="closeAccordion()">レイアウト</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#picture-tab" role="tab"
-                        aria-controls="picture-tab" aria-selected="false" onclick="closeAccordion()">写真</a>
+                        aria-controls="picture-tab" aria-selected="false" onclick="closeAccordion()">コンテンツ</a>
                 </li>
             </ul>
             <div class="tab-content" id="settingsTabs">
                 <div class="tab-pane fade show active" id="text-tab" role="tabpanel" aria-labelledby="text-tab">
                     <div class="accordion" id="settingsListText">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTowText">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwoText" aria-expanded="false"
+                                    aria-controls="collapseTwoText">
+                                    グリッド
+                                </button>
+                            </h2>
+                            <div id="collapseTwoText" class="accordion-collapse collapse"
+                                aria-labelledby="headingTwoText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body" id="rowColumns">
+                                    <div>
+                                        <label for="cutCnt">分割の数</label>
+                                        <input type="number" name="count" id="cutCnt" placeholder="分割の数" value="1">
+                                    </div>
+
+                                    <div>
+                                        <label for="yousoCnt">要素の数</label>
+                                        <input type="number" name="count" id="yousoCnt" placeholder="要素の数" value="1">
+                                    </div>
+
+                                    <div class="p-2">
+                                        <label for="rowColumnsBackGroundColor">背景色</label>
+                                        <select id="rowColumnsBackGroundColor">
+                                            <option value="null" selected>なし</option>
+                                            <option value="dark">黒</option>
+                                            <option value="light">白</option>
+                                            <option value="primary">青</option>
+                                            <option value="secondary">灰色</option>
+                                            <option value="success">緑色</option>
+                                            <option value="info">水色</option>
+                                            <option value="warning">黄色</option>
+                                            <option value="danger">赤</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="border" id="border">
+                                        <label for="border">枠</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThreeText">
+                                <div class=text-dark container bg-light text-start fs-3 fw-3></div>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThreeText" aria-expanded="false"
+                                    aria-controls="collapseThreeText">
+                                    アコーディオン
+                                </button>
+                            </h2>
+                            <div id="collapseThreeText" class="accordion-collapse collapse"
+                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body container" id="accordion">
+                                    <div>
+                                        <label for="accrdnCnt">アコーディオンの数</label>
+                                        <input type="number" name="accordionCount" id="accrdnCnt" value="1">
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="isFlush" id="isFlush">
+                                        <label for="isFlush">枠なし</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwoPic">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwoPic" aria-expanded="false"
+                                    aria-controls="collapseTwoPic">
+                                    カード
+                                </button>
+                            </h2>
+                            <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
+                                data-bs-parent="#settingsListPic">
+                                <div id="card" class="accordion-body">
+                                    <div onchange="changeState()">
+                                        <div>
+                                            <input type="checkbox" name="titleChk" id="cardTitleChk">
+                                            <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力"
+                                                disabled>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
+                                            <input type="text" name="subtitleTxt" id="cardSubtitleTxt"
+                                                placeholder="サブタイトルを入力" disabled>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="textChk" id="cardTextChk">
+                                            <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;"
+                                                placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
+                                        </div>
+                                        <div>
+                                            <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
+                                            <label for="cardImgChk">画像を配置</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade show" id="picture-tab" role="tabpanel" aria-labelledby="picture-tab">
+                    <div class="accordion" id="settingsListPic">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOneText">
                                 <div class=text-dark container bg-light text-start fs-3 fw-3></div>
@@ -130,96 +237,6 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTowText">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwoText" aria-expanded="false"
-                                    aria-controls="collapseTwoText">
-                                    グリッド
-                                </button>
-                            </h2>
-                            <div id="collapseTwoText" class="accordion-collapse collapse"
-                                aria-labelledby="headingTwoText" data-bs-parent="#settingsListText">
-                                <div class="accordion-body" id="rowColumns">
-                                    <div>
-                                        <label for="cutCnt">分割の数</label>
-                                        <input type="number" name="count" id="cutCnt" placeholder="分割の数" value="1">
-                                    </div>
-
-                                    <div>
-                                        <label for="yousoCnt">要素の数</label>
-                                        <input type="number" name="count" id="yousoCnt" placeholder="要素の数" value="1">
-                                    </div>
-
-                                    <div class="p-2">
-                                        <label for="rowColumnsBackGroundColor">背景色</label>
-                                        <select id="rowColumnsBackGroundColor">
-                                            <option value="null" selected>なし</option>
-                                            <option value="dark">黒</option>
-                                            <option value="light">白</option>
-                                            <option value="primary">青</option>
-                                            <option value="secondary">灰色</option>
-                                            <option value="success">緑色</option>
-                                            <option value="info">水色</option>
-                                            <option value="warning">黄色</option>
-                                            <option value="danger">赤</option>
-                                        </select>
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" name="border" id="border">
-                                        <label for="border">枠</label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThreeText">
-                                <div class=text-dark container bg-light text-start fs-3 fw-3></div>
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThreeText" aria-expanded="false"
-                                    aria-controls="collapseThreeText">
-                                    アコーディオン
-                                </button>
-                            </h2>
-                            <div id="collapseThreeText" class="accordion-collapse collapse"
-                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
-                                <div class="accordion-body container" id="accordion">
-                                    <div>
-                                        <label for="accrdnCnt">アコーディオンの数</label>
-                                        <input type="number" name="accordionCount" id="accrdnCnt" value="1">
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" name="isFlush" id="isFlush">
-                                        <label for="isFlush">枠なし</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFourText">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFourText" aria-expanded="false"
-                                    aria-controls="collapseFourText">
-                                    パンくずリスト
-                                </button>
-                            </h2>
-                            <div id="collapseFourText" class="accordion-collapse collapse"
-                                aria-labelledby="headingFourText" data-bs-parent="#settingsListText">
-                                <div class="accordion-body" id="breadcrumb">
-                                    <div>
-                                        <label for="divCnt">深さ</label>
-                                        <input type="number" name="count" id="divCnt" placeholder="深さ" value="1">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade show" id="picture-tab" role="tabpanel" aria-labelledby="picture-tab">
-                    <div class="accordion" id="settingsListPic">
-                        <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOnePic">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOnePic" aria-expanded="true"
@@ -253,41 +270,6 @@
                                     <div>
                                         <label for="slideCnt">スライドの数</label>
                                         <input type="number" name="count" id="slideCnt" placeholder="スライドの数" value="1">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwoPic">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwoPic" aria-expanded="false"
-                                    aria-controls="collapseTwoPic">
-                                    カード
-                                </button>
-                            </h2>
-                            <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
-                                data-bs-parent="#settingsListPic">
-                                <div id="card" class="accordion-body">
-                                    <div onchange="changeState()">
-                                        <div>
-                                            <input type="checkbox" name="titleChk" id="cardTitleChk">
-                                            <input type="text" name="titleTxt" id="cardTitleTxt" placeholder="タイトルを入力"
-                                                disabled>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="subtitleChk" id="cardSubtitleChk">
-                                            <input type="text" name="subtitleTxt" id="cardSubtitleTxt"
-                                                placeholder="サブタイトルを入力" disabled>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="textChk" id="cardTextChk">
-                                            <textarea name="textTxt" id="cardTextTxt" style="vertical-align: top;"
-                                                placeholder="本文を入力" disabled cols="30" rows="5"></textarea>
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" name="imgChk" id="cardImgChk" onchange="">
-                                            <label for="cardImgChk">画像を配置</label>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -361,7 +343,24 @@
                                             <option value="mx-auto d-block">中央揃え</option>
                                             <option value="float-end">右揃え</option>
                                         </select>
-
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFourText">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFourText" aria-expanded="false"
+                                    aria-controls="collapseFourText">
+                                    パンくずリスト
+                                </button>
+                            </h2>
+                            <div id="collapseFourText" class="accordion-collapse collapse"
+                                aria-labelledby="headingFourText" data-bs-parent="#settingsListText">
+                                <div class="accordion-body" id="breadcrumb">
+                                    <div>
+                                        <label for="divCnt">深さ</label>
+                                        <input type="number" name="count" id="divCnt" placeholder="深さ" value="1">
                                     </div>
                                 </div>
                             </div>
