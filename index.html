@@ -34,7 +34,7 @@
             </ul>
             <div class="tab-content" id="settingsTabs">
                 <div class="tab-pane fade show active" id="text-tab" role="tabpanel" aria-labelledby="text-tab">
-                    <div class="accordion" id="settingsListText">
+                    <div class="accordion" id="settingsListLayout">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingTowText">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -44,7 +44,7 @@
                                 </button>
                             </h2>
                             <div id="collapseTwoText" class="accordion-collapse collapse"
-                                aria-labelledby="headingTwoText" data-bs-parent="#settingsListText">
+                                aria-labelledby="headingTwoText" data-bs-parent="#settingsListLayout">
                                 <div class="accordion-body" id="rowColumns">
                                     <div>
                                         <label for="cutCnt">分割の数</label>
@@ -89,7 +89,7 @@
                                 </button>
                             </h2>
                             <div id="collapseThreeText" class="accordion-collapse collapse"
-                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListText">
+                                aria-labelledby="headingThreeText" data-bs-parent="#settingsListLayout">
                                 <div class="accordion-body container" id="accordion">
                                     <div>
                                         <label for="accrdnCnt">アコーディオンの数</label>
@@ -112,7 +112,7 @@
                                 </button>
                             </h2>
                             <div id="collapseTwoPic" class="accordion-collapse collapse" aria-labelledby="headingTwoPic"
-                                data-bs-parent="#settingsListPic">
+                                data-bs-parent="#settingsListLayout">
                                 <div id="card" class="accordion-body">
                                     <div onchange="changeState()">
                                         <div>
@@ -141,7 +141,7 @@
                     </div>
                 </div>
                 <div class="tab-pane fade show" id="picture-tab" role="tabpanel" aria-labelledby="picture-tab">
-                    <div class="accordion" id="settingsListPic">
+                    <div class="accordion" id="settingsListContent">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOneText">
                                 <div class=text-dark container bg-light text-start fs-3 fw-3></div>
@@ -152,7 +152,7 @@
                                 </button>
                             </h2>
                             <div id="collapseOneText" class="accordion-collapse collapse"
-                                aria-labelledby="headingOneText" data-bs-parent="#settingsListText">
+                                aria-labelledby="headingOneText" data-bs-parent="#settingsListContent">
                                 <div class="accordion-body container" id="text">
                                     <div class="p-2">
                                         <input type="text" id="inputMessage" placeholder="テキストを入力してください">
@@ -245,7 +245,7 @@
                                 </button>
                             </h2>
                             <div id="collapseOnePic" class="accordion-collapse collapse" aria-labelledby="headingOnePic"
-                                data-bs-parent="#settingsListPic">
+                                data-bs-parent="#settingsListContent">
                                 <div id="carousel" class="accordion-body">
                                     <div>
                                         <input type="checkbox" name="controle" id="controle">
@@ -283,7 +283,7 @@
                                 </button>
                             </h2>
                             <div id="collapseThreePic" class="accordion-collapse collapse"
-                                aria-labelledby="headingThreePic" data-bs-parent="#settingsListPic">
+                                aria-labelledby="headingThreePic" data-bs-parent="#settingsListContent">
                                 <div class="accordion-body" id="image">
                                     <div class="p-2">
                                         <input type="text" id="inputImageMessage" placeholder="ファイル名を入力してください">
@@ -356,7 +356,7 @@
                                 </button>
                             </h2>
                             <div id="collapseFourText" class="accordion-collapse collapse"
-                                aria-labelledby="headingFourText" data-bs-parent="#settingsListText">
+                                aria-labelledby="headingFourText" data-bs-parent="#settingsListContent">
                                 <div class="accordion-body" id="breadcrumb">
                                     <div>
                                         <label for="divCnt">深さ</label>
