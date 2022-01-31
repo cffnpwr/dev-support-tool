@@ -29,3 +29,18 @@ h3:after {
     bottom: -3px;
     width: 20%;
 }
+
+.bgColor {
+    height: 28px;
+    width: 150px;
+    border: none;
+    box-shadow: 0 0 0 1px #999;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.bgColor:focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px lightseagreen inset;
+}

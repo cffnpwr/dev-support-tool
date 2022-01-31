@@ -4,13 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>Tailwind CSS DevTools</title>
-    <link rel="stylesheet" href="../../css/header.css">
-    <link rel="stylesheet" href="../../css/slider.css">
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/slider.css">
 </head>
 
 <body>
-    <div class="header flex space-x-3 pl-5 py-2 bg-gradient-to-r from-cyan-900 to-cyan-700">
+    <div class="header flex space-x-2 pl-5 py-2 bg-gradient-to-r from-cyan-900 to-cyan-700">
         <img src="../../img/icon.png" class="h-10 w-10">
         <p class="text-white text-3xl font-bold font-serif">Tailwind&nbspCSS&nbsp&nbspDevTools</p>
     </div>
@@ -22,11 +21,11 @@
         <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
     </div>
 
-    <div class="flex space-x-10 px-6">
+    <div class="flex space-x-10 px-6 container mx-auto">
         <div>
             <div class="px-5 pt-1 pb-2">
                 <h3 class="my-3 text-3xl font-semibold font-mono">Sizing</h3>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
                         <span class="text-xl float-right">要素の高さ&nbsp:</span>
                     </div>
@@ -35,7 +34,7 @@
                         <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
                         <span class="text-xl float-right">要素の幅&nbsp:</span>
                     </div>
@@ -48,72 +47,72 @@
 
             <div class="px-5 pt-1 pb-2">
                 <h3 class="my-3 text-3xl font-semibold font-mono">Spacing</h3>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Padding (上) : </span>
+                        <span class="text-xl float-right">Padding&nbsp(上)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpacePaddingTopValue">None</p>
                         <input type="range" min="0" max="32" id="divSpacePaddingTop" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Padding (下) : </span>
+                        <span class="text-xl float-right">Padding&nbsp(下)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpacePaddingBottomValue">None</p>
                         <input type="range" min="0" max="32" id="divSpacePaddingBottom" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Padding (右) : </span>
+                        <span class="text-xl float-right">Padding&nbsp(右)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpacePaddingRightValue">None</p>
                         <input type="range" min="0" max="32" id="divSpacePaddingRight" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Padding (左) : </span>
+                        <span class="text-xl float-right">Padding&nbsp(左)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpacePaddingLeftValue">None</p>
                         <input type="range" min="0" max="32" id="divSpacePaddingLeft" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Margin (上) : </span>
+                        <span class="text-xl float-right">Margin&nbsp(上)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpaceMarginTopValue">None</p>
                         <input type="range" min="0" max="32" id="divSpaceMarginTop" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Margin (下) : </span>
+                        <span class="text-xl float-right">Margin&nbsp(下)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpaceMarginBottomValue">None</p>
                         <input type="range" min="0" max="32" id="divSpaceMarginBottom" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Margin (右) : </span>
+                        <span class="text-xl float-right">Margin&nbsp(右)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpaceMarginRightValue">None</p>
                         <input type="range" min="0" max="32" id="divSpaceMarginRight" value="0">
                     </div>
                 </div>
-                <div class="flex space-x-3 py-1">
+                <div class="flex space-x-2 py-1">
                     <div class="w-36">
-                        <span class="text-xl float-right">Margin (左) : </span>
+                        <span class="text-xl float-right">Margin&nbsp(左)&nbsp: </span>
                     </div>
                     <div class="flex">
                         <p class="w-16 text-xl" id="divSpaceMarginLeftValue">None</p>
@@ -121,11 +120,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="px-5 pt-1 pb-2">
+                <h3 class="my-3 text-3xl font-semibold font-mono">Background&nbspColor</h3>
+                <div class="flex space-x-2 py-1">
+                    <div class="w-36">
+                        <span class="text-xl float-right">背景の色&nbsp:&nbsp</span>
+                    </div>
+                    <div class="flex">
+                        <p class="w-16 text-xl"></p>
+                        <input type="text" id="" class="bgColor text-xl p-1">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="pt-10 pl-10">
-        <textarea name="outputCode" id="outputCode" class="border border-black" cols="80" rows="8"></textarea>
+    <div class="pt-3 pl-10 container mx-auto">
+        <textarea name="outputCode" id="outputCode" class="border border-black" cols="80" rows="5"></textarea>
     </div>
 
     <script src="https://cdn.tailwindcss.com"></script>
