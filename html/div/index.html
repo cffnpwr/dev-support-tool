@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Development Support</title>
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/slider.css">
+</head>
+
+<body>
+    <div class="header flex space-x-3 pl-5 py-2 bg-gradient-to-r from-cyan-900 to-cyan-700">
+        <img src="../../img/icon.png" class="h-10 w-10">
+        <p class="text-white text-3xl font-bold font-serif">Tailwind&nbspCSS&nbsp&nbspDevTools</p>
+    </div>
+    <div class="subHeader flex bg-gradient-to-r from-cyan-700 to-cyan-600 text-white">
+        <a href="index.html" class="TextBoxHover mt-0.5 ml-8 px-1">使い方マニュアル</a>
+        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">div&nbspタグ</a>
+        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">p&nbspタグ</a>
+        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">span&nbspタグ</a>
+        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
+    </div>
+
+    <div class="flex space-x-64 px-6">
+        <div>
+            <div class="p-5">
+                <h3 class="text-3xl py-2 font-mono">Sizing</h3>
+                <div class="flex space-x-3 w-70 py-1">
+                    <span class="text-xl">縦 :</span>
+                    <span class="text-xl w-11" id="divSizeHeihgtValue">Auto</span>
+                    <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pt-10 pl-10">
+        <textarea name="outputCode" id="outputCode" class="border border-black" cols="80" rows="8"></textarea>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="../../js/divTools.js"></script>
+</body>
+
+</html>
