@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Development Support</title>
+    <title>Tailwind CSS DevTools</title>
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/slider.css">
+    <link rel="stylesheet" href="../../css/main.css">
 </head>
 
 <body>
@@ -21,22 +22,106 @@
         <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
     </div>
 
-    <div class="flex space-x-64 px-6">
+    <div class="flex space-x-10 px-6">
         <div>
-            <div class="p-5">
-                <h3 class="text-3xl py-2 font-mono">Sizing</h3>
-                <div class="flex space-x-3 w-70 py-1">
-                    <span class="text-xl">縦&nbsp:</span>
-                    <span class="text-xl w-11" id="divSizeHeihgtValue">Auto</span>
-                    <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+            <div class="px-5 pt-1 pb-2">
+                <h3 class="my-3 text-3xl font-semibold font-mono">Sizing</h3>
+                <div class="flex space-x-3 py-1">
+                    <div class="w-36">
+                        <span class="text-xl float-right">要素の高さ&nbsp:</span>
+                    </div>
+                    <div class="flex">
+                        <p class="w-16 text-xl" id="divSizeHeihgtValue">Auto</p>
+                        <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                    </div>
                 </div>
-                <div class="flex space-x-3 w-70 py-1">
-                    <span class="text-xl">横&nbsp:</span>
-                    <span class="text-xl w-11" id="divSizeWidthValue">Auto</span>
-                    <input type="range" min="0" max="32" id="divSizeWidth" value="0">
+                <div class="flex space-x-3 py-1">
+                    <div class="w-36">
+                        <span class="text-xl float-right">要素の幅&nbsp:</span>
+                    </div>
+                    <div class="flex">
+                        <p class="w-16 text-xl" id="divSizeWidthValue">Auto</p>
+                        <input type="range" min="0" max="32" id="divSizeWidth" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-5 pt-1 pb-2">
+                <h3 class="my-3 text-3xl font-semibold font-mono">Spacing</h3>
+                <div class="flex space-x-3 py-1">
+                    <div class="w-36">
+                        <span class="text-xl float-right">Padding (上) : </span>
+                    </div>
+                    <div class="flex">
+                        <p class="w-16 text-xl" id="divSpacePaddingTopValue">None</p>
+                        <input type="range" min="0" max="32" id="divSpacePaddingTop" value="0">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Padding (下) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpacePaddingBottom"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Padding (右) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpacePaddingRight"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Padding (左) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpacePaddingLeft"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Margin (上) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpaceMarginTop"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Margin (下) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpaceMarginBottom"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Margin (右) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpaceMarginRight"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
+                <div class="w-56 flex space-x-4 py-1">
+                    <div class="w-40">
+                        <span class="text-xl float-right">Margin (左) : </span>
+                    </div>
+                    <div class="w-16">
+                        <input type="tel" name="divSpace" id="divSpaceMarginLeft"
+                            class="w-16 pl-0.5 border border-black">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <div class="pt-10 pl-10">

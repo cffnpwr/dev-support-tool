@@ -13,7 +13,7 @@ let divSizeHeightCode = "";
 
 divSizeHeight.addEventListener('input', function () {
     divSizeHeightCode = giveClass(vList[divSizeHeight.value], divSizeHeightClass);
-    document.getElementById("divSizeHeihgtValue").innerHTML = displayValue(divSizeHeight.value);
+    document.getElementById("divSizeHeihgtValue").innerHTML = displaySize(divSizeHeight.value);
     codeGenerator();
 }, false);
 
@@ -24,7 +24,7 @@ let divSizeWidthCode = "";
 
 divSizeWidth.addEventListener('input', function () {
     divSizeWidthCode = giveClass(vList[divSizeWidth.value], divSizeWidthClass);
-    document.getElementById("divSizeWidthValue").innerHTML = displayValue(divSizeWidth.value);
+    document.getElementById("divSizeWidthValue").innerHTML = displaySize(divSizeWidth.value);
     codeGenerator();
 }, false);
 
@@ -33,6 +33,8 @@ divSizeWidth.addEventListener('input', function () {
 function giveClass(parameter, className) {
     if (parameter == "Auto") {
         return "";
+    } else if (parameter == "None") {
+        return "";
     } else {
         return className + parameter;
     }
@@ -40,7 +42,7 @@ function giveClass(parameter, className) {
 
 
 // 値の表示
-function displayValue(parameter) {
+function displaySize(parameter) {
     if (vList[parameter] == 0) {
         return "Auto";
     } else {
