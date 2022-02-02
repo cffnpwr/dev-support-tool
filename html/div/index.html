@@ -12,17 +12,19 @@
     <div class="header flex space-x-2 pl-5 py-2 bg-gradient-to-r from-cyan-900 to-cyan-700">
         <img src="../../img/icon.png" class="h-10 w-10">
         <p class="text-white text-3xl font-bold font-serif">Tailwind&nbspCSS&nbsp&nbspDevTools</p>
+        <p class="text-white text-xl font-serif pl-10 my-2">-&nbspdiv&nbspver.&nbsp-</p>
     </div>
     <div class="subHeader flex bg-gradient-to-r from-cyan-700 to-cyan-600 text-white">
-        <a href="index.html" class="TextBoxHover mt-0.5 ml-8 px-1">使い方マニュアル</a>
+        <a href="../use-devtools/index.html" target="_blank" rel="noopener noreferrer" class="TextBoxHover mt-0.5 ml-8 px-1">使い方マニュアル</a>
         <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">div&nbspタグ</a>
-        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">p&nbspタグ</a>
-        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">span&nbspタグ</a>
-        <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
+        <a href="../p/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">p&nbspタグ</a>
+        <a href="../span/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">span&nbspタグ</a>
+        <a href="../img/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
     </div>
 
     <div class="flex space-x-10 px-6 container mx-auto">
         <div>
+            <!-- Sizing -->
             <div class="px-5 pt-1 pb-2">
                 <h3 class="my-3 text-3xl font-semibold font-mono">Sizing</h3>
                 <div class="flex space-x-2 py-1">
@@ -44,7 +46,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Spacing -->
             <div class="px-5 pt-1 pb-2">
                 <h3 class="my-3 text-3xl font-semibold font-mono">Spacing</h3>
                 <div class="flex space-x-2 py-1">
@@ -120,7 +122,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- BackgroundColor -->
             <div class="px-5 pt-1 pb-2">
                 <h3 class="my-3 text-3xl font-semibold font-mono">Background&nbspColor</h3>
                 <div class="flex space-x-2 py-1">
@@ -128,8 +130,10 @@
                         <span class="text-xl float-right">背景の色&nbsp:&nbsp</span>
                     </div>
                     <div class="flex">
-                        <p class="w-16 text-xl"></p>
-                        <input type="text" id="" class="bgColor text-xl p-1">
+                        <div class="w-16">
+                            <div id="divBackgroundColorPreview" class="w-11 h-7 bgColorBorder"></div>
+                        </div>
+                        <input type="text" id="divBackgroundColor" class="bgColor text-xl p-1">
                     </div>
                 </div>
             </div>

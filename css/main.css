@@ -44,3 +44,11 @@ h3:after {
     outline: 0;
     box-shadow: 0 0 0 2px lightseagreen inset;
 }
+
+.bgColorBorder {
+    border: none;
+    box-shadow: 0 0 0 1px #999;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

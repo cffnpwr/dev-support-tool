@@ -8,13 +8,21 @@ const spaceList = ["None", 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11
 
 
 // Sizing (縦)
+
+// 値の取得
 const divSizeHeight = document.getElementById("divSizeHeight");
+// クラス名の指定
 const divSizeHeightClass = "h-";
+// Sizing (縦) のコード用変数を宣言
 let divSizeHeightCode = "";
 
+// 値が変更されたら実行
 divSizeHeight.addEventListener('input', function () {
+    // Sizing (縦) のコードを生成
     divSizeHeightCode = giveClass(sizeList[divSizeHeight.value], divSizeHeightClass);
+    // 取得した値を HTML に表示
     document.getElementById("divSizeHeihgtValue").innerHTML = displaySize(divSizeHeight.value);
+    // 出力コード生成器の実行
     codeGenerator();
 }, false);
 
@@ -119,11 +127,26 @@ divSpaceMarginLeft.addEventListener('input', function () {
 }, false);
 
 
+// Background Color
+const divBackgroundColor = document.getElementById("divBackgroundColor");
+let divBackgroundColorPreview = document.getElementById("divBackgroundColorPreview");
+const divBackgroundColorClass = "&nbspbg-";
+let divBackgroundColorCode = "";
+
+divBackgroundColor.addEventListener('input', function () {
+    divBackgroundColorPreview.innerHTML = "<div class='w-11 h-7 bg-" + divBackgroundColor.value + "'></div>";
+    divBackgroundColorCode = giveClass(divBackgroundColor.value, divBackgroundColorClass)
+    codeGenerator();
+}, false);
+
+
 // クラス付与
 function giveClass(parameter, className) {
     if (parameter == "Auto") {
         return "";
     } else if (parameter == "None") {
+        return "";
+    } else if (parameter == "") {
         return "";
     } else {
         return className + parameter;
@@ -152,6 +175,6 @@ function displaySpace(parameter) {
 
 // コード生成
 function codeGenerator() {
-    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + '"></div>'
+    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + divBackgroundColorCode + '"></div>'
     document.getElementById("outputCode").innerHTML = codeGeneration;
 }
