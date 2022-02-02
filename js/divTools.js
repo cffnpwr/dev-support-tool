@@ -188,6 +188,6 @@ function giveClass(parameter, className) {
 
 // コード生成
 function codeGenerator() {
-    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + divBackgroundColorCode + divShadowSizeCode + divShadowColorCode + '"></div>'
+    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + divShadowSizeCode + divShadowColorCode + divBackgroundColorCode + '"></div>'
     document.getElementById("outputCode").innerHTML = codeGeneration;
 };
