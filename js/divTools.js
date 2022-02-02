@@ -186,7 +186,7 @@ function giveClass(parameter, className) {
 };
 
 
-// コード生成
+// コード生成器
 function codeGenerator() {
     const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + divShadowSizeCode + divShadowColorCode + divBackgroundColorCode + '"></div>'
     document.getElementById("outputCode").innerHTML = codeGeneration;
