@@ -30,25 +30,23 @@ h3:after {
     width: 20%;
 }
 
+#divShadowColor:disabled {
+    cursor: not-allowed;
+}
+
 .bgColor {
     height: 28px;
     width: 150px;
-    border: none;
-    box-shadow: 0 0 0 1px #999;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-.bgColor:focus {
-    outline: 0;
-    box-shadow: 0 0 0 2px lightseagreen inset;
+    border: 1px #999 inset;
 }
 
 .bgColorBorder {
-    border: none;
-    box-shadow: 0 0 0 1px #999;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    border: 1px #999 inset;
+}
+
+.outputCode {
+    height: 140px;
+    width: 817px;
+    resize: none;
+    border: 1px #999 inset;
 }
