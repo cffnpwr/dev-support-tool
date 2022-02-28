@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TailwindCSS DevTools</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+        <a href="../../index.html" class="flex text-xl place-items-center">
+            <img src="../../img/icon.svg" class="h-8 mx-4">
+            <span class="mx-2">TailwindCSS Development Support Tools</span>
+        </a>
+        <div class="flex place-items-center text-lg">
+            <a href="../usage/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Usage</a>
+            <a href="../divTools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Div
+                Tools</a>
+            <span
+                class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Text
+                Tools</span>
+            <a href="../imgTools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Image
+                Tools</a>
+        </div>
+    </header>
+
+    <div class="flex m-3">
+        <div name="settings" class="w-1/2 m-8">
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Text</h3>
+                <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
+                    <textarea class="border-2 rounded-xl w-full h-48 p-4 border-slate-300"
+                        placeholder="ここに入力したテキストがプレビューで反映されます"></textarea>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Tag</h3>
+                <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
+                    <span class="text-xl">タグの種類</span>
+                    <select class="p-1 rounded mx-2">
+                        <option value="p">pタグ</option>
+                        <option value="span">spanタグ</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Font</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">フォント</span>
+                        <select class="p-1 rounded mx-2">
+                            <option value="sans">サンセリフ</option>
+                            <option value="serif">セリフ</option>
+                            <option value="mono">モノ</option>
+                        </select>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">スタイル</span>
+                        <div>
+                            <input class="mx-2" type="checkbox" id="isItalic">
+                            <label for="isItalic">イタリック体</label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">文字の太さ</span>
+                        <div class="flex">
+                            <p class="w-16 text-xl" id="">Auto</p>
+                            <input type="range" min="0" max="9" id="" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">文字の大きさ</span>
+                        <div class="flex">
+                            <p class="w-16 text-xl" id="">Auto</p>
+                            <input type="range" min="0" max="32" id="" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">文字色</span>
+                        <div class="flex">
+                            <div class="rounded w-7 border-2 mr-4" id="textColor"></div>
+                            <select class="p-1 rounded mx-2">
+                                <option value="none">指定なし</option>
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="10" id="" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Decoration</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線</span>
+                        <div>
+                            <input class="mx-2" type="checkbox" id="isLine">
+                            <label for="isLine">設定有効化</label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線の位置</span>
+                        <div class="flex">
+                            <select class="p-1 rounded mx-2">
+                                <option value="no-underline">なし</option>
+                                <option value="overline">上線</option>
+                                <option value="line-through">中央</option>
+                                <option value="underline">下線</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線の色</span>
+                        <div class="flex">
+                            <div class="rounded w-7 border-2 mr-4" id=""></div>
+                            <select class="p-1 rounded mx-2">
+                                <option value="none">指定なし</option>
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="10" id="" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線のスタイル</span>
+                        <div class="flex">
+                            <select class="p-1 rounded mx-2">
+                                <option value="solid">直線</option>
+                                <option value="double">二重直線</option>
+                                <option value="dotted">点線</option>
+                                <option value="dashed">破線</option>
+                                <option value="wavy">波線</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線の太さ</span>
+                        <div class="flex">
+                            <p class="w-16 text-xl" id="">Auto</p>
+                            <input type="range" min="0" max="5" id="" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">線のオフセット</span>
+                        <div class="flex">
+                            <p class="w-16 text-xl" id="">なし</p>
+                            <input type="range" min="0" max="4" id="" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Aligin</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">文字の配置(横)</span>
+                        <select class="p-1 rounded mx-2">
+                            <option value="left">左揃え</option>
+                            <option value="center">中央揃え</option>
+                            <option value="right">右揃え</option>
+                            <option value="justify">横幅フィット</option>
+                        </select>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">文字の配置(縦)</span>
+                        <select class="p-1 rounded mx-2">
+                            <option value="top">上揃え</option>
+                            <option value="middle">中央揃え</option>
+                            <option value="bottom">下揃え</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div name="previewAndCode" class="w-1/2 m-8">
+            <div class="h-1/2 flex flex-col mb-8">
+                <h3 class="text-3xl font-mono font-semibold">Preview</h3>
+                <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4">ここはプレビュー領域</div>
+            </div>
+            <div class="h-1/2 flex flex-col mb-8">
+                <div class="flex justify-between place-items-center">
+                    <h3 class="text-3xl font-mono font-semibold">Code</h3>
+                    <button class="border-2 rounded-full px-2 py-1 m-1">コードをコピー</button>
+                </div>
+                <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="codeBlock">ここはコード領域</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
