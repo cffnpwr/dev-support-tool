@@ -6,23 +6,31 @@
     <title>Tailwind CSS DevTools</title>
     <link rel="icon" type="image/png" href="../../img/icon.png">
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="../../css/slider.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="../../js/divTools.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="header flex space-x-2 pl-5 py-2 bg-gradient-to-r from-cyan-900 to-cyan-700">
-            <img src="../../img/icon.png" class="mt-1 mr-1 h-8 w-8">
-            <p class="text-white text-3xl font-bold font-serif">Tailwind&nbspCSS&nbsp&nbspDevTools</p>
-            <p class="text-white text-xl font-serif pl-10 my-2">-&nbspdiv&nbspver.&nbsp-</p>
-        </div>
-        <div class="subHeader flex bg-gradient-to-r from-cyan-700 to-cyan-600 text-white">
-            <a href="../use-devtools/index.html" target="_blank" rel="noopener noreferrer"
-                class="TextBoxHover mt-0.5 ml-8 px-1">使い方マニュアル</a>
-            <a href="index.html" class="TextBoxHover mt-0.5 ml-16 px-1">div&nbspタグ</a>
-            <a href="../p/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">p&nbspタグ</a>
-            <a href="../span/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">span&nbspタグ</a>
-            <a href="../img/index.html" class="TextBoxHover mt-0.5 ml-16 px-1">img&nbspタグ</a>
+    <header class="flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+        <a href="../../index.html" class="flex text-xl place-items-center">
+            <img src="../../img/icon.png" class="h-12 mx-4">
+            <span class="mx-2">TailwindCSS Development Support Tools</span>
+        </a>
+        <div class="flex place-items-center text-lg">
+            <a href="../use-devtools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Usage</a>
+            <a href="../div/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">div
+                tag</a>
+            <span href="../p/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">p
+                tag</span>
+            <a href="../span/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">span
+                tag</a>
+            <a href="../img/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">img
+                tag</a>
         </div>
     </header>
 
@@ -260,9 +268,6 @@
             <textarea readonly name="outputCode" id="outputCode" class="outputCode"></textarea>
         </div>
     </div>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="text/javascript" src="../../js/divTools.js"></script>
 </body>
 
 </html>
