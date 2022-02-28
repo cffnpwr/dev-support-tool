@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TailwindCSS DevTools</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header class="flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+        <a href="../../index.html" class="flex text-xl place-items-center">
+            <img src="../../img/icon.svg" class="h-8 mx-4">
+            <span class="mx-2">TailwindCSS Development Support Tools</span>
+        </a>
+        <div class="flex place-items-center text-lg">
+            <a href="../use-devtools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Usage</a>
+            <a href="../div/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">div
+                tag</a>
+            <span href="../p/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">p
+                tag</span>
+            <a href="../span/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">span
+                tag</a>
+            <a href="../img/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">img
+                tag</a>
+        </div>
+    </header>
+
+    <div class="flex m-3">
+        <div name="settings" class="w-1/2 m-2">
+            <div class="w-1/2">
+                <div class="mb-8 w-full">
+                    <h3 class="text-3xl font-semibold font-mono">Sizing</h3>
+                    <div class="flex justify-between space-x-2 py-1 w-full">
+                        <span class="text-xl">文字の大きさ</span>
+                        <div class="flex">
+                            <p class="w-16 text-xl" id="divSizeHeihgtValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-8 w-full">
+                    <h3 class="text-3xl font-semibold font-mono">Color</h3>
+                    <div class="flex justify-between space-x-2 py-1 w-full">
+                        <span class="text-xl">文字色</span>
+                        <div class="flex">
+                            <div class="rounded w-7 border-2 mr-4" id="textColor"></div>
+                            <select class="p-1 rounded mx-2">
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="10" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div name="preview" class="w-1/2">
+            ここはプレビュー領域
+        </div>
+    </div>
+</body>
+
+</html>
