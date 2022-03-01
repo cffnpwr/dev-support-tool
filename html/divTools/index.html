@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
-    <meta charset="utf-8">
-    <title>Tailwind CSS DevTools</title>
-    <link rel="icon" type="image/png" href="../../img/icon.png">
-    <link rel="stylesheet" href="../../css/divTools.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../img/icon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <title>TailwindCSS DevTools</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -21,7 +24,7 @@
             <span
                 class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Div
                 Tools</span>
-            <a href="../textTools/index.html" 
+            <a href="../textTools/index.html"
                 class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Text
                 Tools</a>
             <a href="../imgTools/index.html"
@@ -30,242 +33,310 @@
         </div>
     </header>
 
-    <div class="main container mx-auto">
-        <div class="flex space-x-10 px-6">
-            <div>
-                <!-- Sizing -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Sizing</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">要素の高さ&nbsp:&nbsp</span>
-                        </div>
+    <div class="flex m-3">
+        <div id="settings" class="w-1/2 m-8">
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Sizing</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">要素の大きさ (横)</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divSizeHeihgtValue">Auto</p>
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
                             <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">要素の幅&nbsp:&nbsp</span>
-                        </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">要素の大きさ (縦)</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divSizeWidthValue">Auto</p>
+                            <p class="w-auto text-xl mx-4" id="divSizeWidthValue">Auto</p>
                             <input type="range" min="0" max="32" id="divSizeWidth" value="0">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Spacing -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Spacing</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Padding&nbsp(上)&nbsp:&nbsp</span>
-                        </div>
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Spacing</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Padding (上)</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divSpacePaddingTopValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingTop" value="0">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Padding&nbsp(下)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpacePaddingBottomValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingBottom" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Padding&nbsp(右)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpacePaddingRightValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingRight" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Padding&nbsp(左)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpacePaddingLeftValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingLeft" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Margin&nbsp(上)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpaceMarginTopValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginTop" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Margin&nbsp(下)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpaceMarginBottomValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginBottom" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Margin&nbsp(右)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpaceMarginRightValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginRight" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">Margin&nbsp(左)&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <p class="w-16 text-xl" id="divSpaceMarginLeftValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginLeft" value="0">
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Box Shadow -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Box&nbspShadow</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">影の大きさ&nbsp:&nbsp</span>
-                        </div>
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Padding (下)</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divShadowSizeValue">None</p>
-                            <input type="range" min="0" max="5" id="divShadowSize" value="0">
+                            <p class="w-auto text-xl mx-4" id="divSizeWidthValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeWidth" value="0">
                         </div>
                     </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">影の色&nbsp:&nbsp</span>
-                        </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Padding (右)</span>
                         <div class="flex">
-                            <div class="w-16">
-                                <div id="divShadowColorPreview">
-                                    <div class="w-12 h-7 bgColorBorder"></div>
-                                </div>
-                            </div>
-                            <input type="text" disabled placeholder="カラーコードを入力" id="divShadowColor" class="bgColor p-1">
+                            <p class="w-auto text-xl mx-4" id="divSizeWidthValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeWidth" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Padding (左)</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeWidthValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeWidth" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Margin (上)</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Margin (下)</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Margin (右)</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Margin (左)</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <!-- Borders -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Borders</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">枠線の太さ&nbsp:&nbsp</span>
-                        </div>
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Box Shadow</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">影の大きさ</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divBordersWidthValue">None</p>
-                            <input type="range" min="0" max="4" id="divBordersWidth" value="0">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">枠線の角&nbsp:&nbsp</span>
-                        </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">影の色</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="divBordersRadiusValue">None</p>
-                            <input type="range" min="0" max="9" id="divBordersRadius" value="0">
-                        </div>
-                    </div>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">枠線の色&nbsp:&nbsp</span>
-                        </div>
-                        <div class="flex">
-                            <div class="w-16">
-                                <div id="">
-                                    <div class="w-12 h-7 bgColorBorder"></div>
-                                </div>
-                            </div>
-                            <input type="text" placeholder="カラーコードを入力" id="divBordersColor" class="bgColor p-1">
+                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                                <option value="none">指定なし</option>
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- BackgroundColor -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Background&nbspColor</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">背景の色&nbsp:&nbsp</span>
-                        </div>
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Borders</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">枠線の太さ</span>
                         <div class="flex">
-                            <div class="w-16">
-                                <div id="divBackgroundColorPreview">
-                                    <div class="w-12 h-7 bgColorBorder"></div>
-                                </div>
-                            </div>
-                            <input type="text" placeholder="カラーコードを入力" id="divBackgroundColor" class="bgColor p-1">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">枠線の角</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">枠線の色</span>
+                        <div class="flex">
+                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                                <option value="none">指定なし</option>
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Rotate -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Rotate</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">角度&nbsp:&nbsp</span>
-                        </div>
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Background Color</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">背景の色</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">None</p>
-                            <input type="range" min="0" max="4" id="" value="0">
+                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                                <option value="none">指定なし</option>
+                                <option value="black">black</option>
+                                <option value="white">white</option>
+                                <option value="slate">slate</option>
+                                <option value="gray">gray</option>
+                                <option value="zinc">zinc</option>
+                                <option value="neutral">neutral</option>
+                                <option value="stone">stone</option>
+                                <option value="red">red</option>
+                                <option value="orange">orange</option>
+                                <option value="amber">amber</option>
+                                <option value="yellow">yellow</option>
+                                <option value="lime">lime</option>
+                                <option value="green">green</option>
+                                <option value="emerald">emerald</option>
+                                <option value="teal">teal</option>
+                                <option value="cyan">cyan</option>
+                                <option value="sky">sky</option>
+                                <option value="blue">blue</option>
+                                <option value="indigo">indigo</option>
+                                <option value="violet">violet</option>
+                                <option value="purple">purple</option>
+                                <option value="fuchsia">fuchsia</option>
+                                <option value="pink">pink</option>
+                                <option value="rose">rose</option>
+                            </select>
+                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Floats -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Floats</h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">配置&nbsp:&nbsp</span>
-                        </div>
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Rotate</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">角度</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">None</p>
-                            <input type="range" min="0" max="4" id="" value="0">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Flex -->
-                <div class="px-5 pt-1 pb-2">
-                    <h3 class="my-3 text-3xl font-semibold font-mono">Flex<span
-                            class="float-right mt-2 text-lg font-normal font-sans"><input type="checkbox" id=""
-                                class="mx-1">有効化</span></h3>
-                    <div class="flex space-x-2 py-1">
-                        <div class="w-36">
-                            <span class="text-xl float-right">スペース&nbsp:&nbsp</span>
-                        </div>
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Floats</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">配置</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">None</p>
-                            <input type="range" min="0" max="4" id="" value="0">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Flex</h3>
+                <div class="pl-4">
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Flex</span>
+                        <div>
+                            <input class="mx-2 scale-150" type="checkbox" id="isLine">
+                            <label for="isLine">設定有効化</label>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">スペース</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="pt-3 pl-10">
-            <textarea readonly name="outputCode" id="outputCode" class="outputCode"></textarea>
+
+        <div id="previewAndCode" class="w-1/2 m-8 relative">
+            <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
+                <div class="h-1/2 flex flex-col mb-8">
+                    <h3 class="text-3xl font-mono font-semibold">Preview</h3>
+                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4">ここはプレビュー領域</div>
+                </div>
+                <div class="h-1/2 flex flex-col mb-8">
+                    <div class="flex justify-between place-items-center">
+                        <h3 class="text-3xl font-mono font-semibold">Code</h3>
+                        <button
+                            class="border-2 rounded-full border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1">コードをコピー</button>
+                    </div>
+                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
+                        id="codeBlock">ここはコード領域</textarea>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="../../js/divTools.js"></script>
+    <script src="../../js/divTools.js"></script>
+    <script src="../../js/colorSelector.js"></script>
 </body>
 
 </html>
