@@ -34,7 +34,7 @@
     </header>
 
     <div class="flex m-3">
-        <div name="settings" class="w-1/2 m-8">
+        <div id="settings" class="w-1/2 m-8">
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Text</h3>
                 <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
@@ -70,7 +70,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">スタイル</span>
                         <div>
-                            <input class="mx-2" type="checkbox" id="isItalic">
+                            <input class="mx-2 scale-150" type="checkbox" id="isItalic">
                             <label for="isItalic">イタリック体</label>
                         </div>
                     </div>
@@ -78,24 +78,24 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の太さ</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">Auto</p>
-                            <input type="range" min="0" max="9" id="" value="0">
+                            <p class="w-auto text-xl mx-4" id="fontWeightValue">none</p>
+                            <input type="range" min="0" max="9" id="fontWeightParam" value="0">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の大きさ</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">Auto</p>
-                            <input type="range" min="0" max="32" id="" value="0">
+                            <p class="w-auto text-xl mx-4" id="fontSizeValue">Auto</p>
+                            <input type="range" min="0" max="13" id="fontSizeParam" value="0">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字色</span>
                         <div class="flex">
-                            <div class="rounded w-7 border-2 mr-4" id="textColor"></div>
-                            <select class="p-1 rounded mx-2">
+                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="textColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -122,7 +122,7 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="10" id="" value="0">
+                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線</span>
                         <div>
-                            <input class="mx-2" type="checkbox" id="isLine">
+                            <input class="mx-2 scale-150" type="checkbox" id="isLine">
                             <label for="isLine">設定有効化</label>
                         </div>
                     </div>
@@ -154,8 +154,8 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の色</span>
                         <div class="flex">
-                            <div class="rounded w-7 border-2 mr-4" id=""></div>
-                            <select class="p-1 rounded mx-2">
+                            <div class="rounded w-7 border-2 mr-4" id="lineColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="lineColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -182,7 +182,7 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="10" id="" value="0">
+                            <input type="range" min="0" max="9" id="lineColorParamDarkness" value="0">
                         </div>
                     </div>
 
@@ -202,7 +202,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の太さ</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">Auto</p>
+                            <p class="w-auto text-xl mx-4" id="">Auto</p>
                             <input type="range" min="0" max="5" id="" value="0">
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線のオフセット</span>
                         <div class="flex">
-                            <p class="w-16 text-xl" id="">なし</p>
+                            <p class="w-auto text-xl mx-4" id="">なし</p>
                             <input type="range" min="0" max="4" id="" value="0">
                         </div>
                     </div>
@@ -242,21 +242,26 @@
             </div>
         </div>
 
-        <div name="previewAndCode" class="w-1/2 m-8">
-            <div class="h-1/2 flex flex-col mb-8">
-                <h3 class="text-3xl font-mono font-semibold">Preview</h3>
-                <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4">ここはプレビュー領域</div>
-            </div>
-            <div class="h-1/2 flex flex-col mb-8">
-                <div class="flex justify-between place-items-center">
-                    <h3 class="text-3xl font-mono font-semibold">Code</h3>
-                    <button
-                        class="border-2 rounded-full border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1">コードをコピー</button>
+        <div id="previewAndCode" class="w-1/2 m-8 relative">
+            <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
+                <div class="h-1/2 flex flex-col mb-8">
+                    <h3 class="text-3xl font-mono font-semibold">Preview</h3>
+                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4">ここはプレビュー領域</div>
                 </div>
-                <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="codeBlock">ここはコード領域</div>
+                <div class="h-1/2 flex flex-col mb-8">
+                    <div class="flex justify-between place-items-center">
+                        <h3 class="text-3xl font-mono font-semibold">Code</h3>
+                        <button
+                            class="border-2 rounded-full border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1">コードをコピー</button>
+                    </div>
+                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
+                        id="codeBlock">ここはコード領域</textarea>
+                </div>
             </div>
         </div>
     </div>
+    <script src="../../js/textTools.js"></script>
+    <script src="../../js/colorSelector.js"></script>
 </body>
 
 </html>
