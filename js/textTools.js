@@ -104,13 +104,12 @@ function updateLineColorValue() {
 }
 
 function updatePreview() {
-
     //コード領域のDOM
     const codeBlock = document.getElementById("codeBlock");
     //プレビュー領域のDOM
     const previewBlock = document.getElementById("previewBlock");
     //入力されたテキスト
-    const inputText = document.getElementById("inputText").value;
+    const inputText = document.getElementById("inputText").value.replace(/\r?\n/g, '<br>');
 
     const tag = document.getElementById("tagValue").value;
 
