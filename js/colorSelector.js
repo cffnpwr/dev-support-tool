@@ -29,13 +29,13 @@ function updateColorValue(defaultClasses, valueDom, ColorDom, DarknessDom, type)
         case "black":
         case "white":
             classAddition = " bg-" + colorParamColor.value;
-            outputClassAddition = " " + type + "-" + colorParamColor.value;
+            outputClassAddition = "" + type + "-" + colorParamColor.value;
 
             break;
 
         default:
             classAddition = " bg-" + colorParamColor.value + "-" + colorList[colorParamDarkness.value];
-            outputClassAddition = " " + type + "-" + colorParamColor.value + "-" + colorList[colorParamDarkness.value];
+            outputClassAddition = "" + type + "-" + colorParamColor.value + "-" + colorList[colorParamDarkness.value];
 
             break;
     }
