@@ -39,7 +39,7 @@
                 <h3 class="text-3xl font-semibold font-mono">Text</h3>
                 <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
                     <textarea class="border-2 rounded-xl w-full h-48 p-4 border-slate-300"
-                        placeholder="ここに入力したテキストがプレビューで反映されます"></textarea>
+                        placeholder="ここに入力したテキストがプレビューで反映されます" id="inputText"></textarea>
                 </div>
             </div>
 
@@ -47,7 +47,7 @@
                 <h3 class="text-3xl font-semibold font-mono">Tag</h3>
                 <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
                     <span class="text-xl">タグの種類</span>
-                    <select class="p-1 rounded mx-2">
+                    <select class="p-1 rounded mx-2" id="tagValue">
                         <option value="p">pタグ</option>
                         <option value="span">spanタグ</option>
                     </select>
@@ -60,25 +60,26 @@
                 <div class="pl-4">
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">フォント</span>
-                        <select class="p-1 rounded mx-2">
-                            <option value="sans">サンセリフ</option>
-                            <option value="serif">セリフ</option>
-                            <option value="mono">モノ</option>
+                        <select class="p-1 rounded mx-2 value" id="fontValue">
+                            <option value="none" selected>指定なし</option>
+                            <option value="font-sans">サンセリフ</option>
+                            <option value="font-serif">セリフ</option>
+                            <option value="font-mono">モノ</option>
                         </select>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">スタイル</span>
                         <div>
-                            <input class="mx-2 scale-150" type="checkbox" id="isItalic">
-                            <label for="isItalic">イタリック体</label>
+                            <input class="mx-2 scale-150 value" type="checkbox" id="italicValue" value="none">
+                            <label for="italicValue">イタリック体</label>
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の太さ</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="fontWeightValue">none</p>
+                            <p class="w-auto text-xl mx-4 value" id="fontWeightValue">none</p>
                             <input type="range" min="0" max="9" id="fontWeightParam" value="0">
                         </div>
                     </div>
@@ -86,7 +87,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の大きさ</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="fontSizeValue">Auto</p>
+                            <p class="w-auto text-xl mx-4 value" id="fontSizeValue">none</p>
                             <input type="range" min="0" max="13" id="fontSizeParam" value="0">
                         </div>
                     </div>
@@ -94,7 +95,7 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字色</span>
                         <div class="flex">
-                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
+                            <div class="rounded w-7 border-2 mr-4 value" id="textColorValue"></div>
                             <select class="p-1 rounded mx-2" id="textColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
@@ -142,11 +143,11 @@
                     <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の位置</span>
                         <div class="flex">
-                            <select class="p-1 rounded mx-2">
+                            <select class="p-1 rounded mx-2 lineParam lineValue" id="lineValue">
                                 <option value="no-underline">なし</option>
                                 <option value="overline">上線</option>
                                 <option value="line-through">中央</option>
-                                <option value="underline">下線</option>
+                                <option value="underline" selected>下線</option>
                             </select>
                         </div>
                     </div>
@@ -154,8 +155,8 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の色</span>
                         <div class="flex">
-                            <div class="rounded w-7 border-2 mr-4" id="lineColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="lineColorParamColor">
+                            <div class="rounded w-7 border-2 mr-4 lineValue" id="lineColorValue" value="none"></div>
+                            <select class="p-1 rounded mx-2 lineParam" id="lineColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -182,19 +183,19 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="lineColorParamDarkness" value="0">
+                            <input type="range" min="0" max="9" id="lineColorParamDarkness" value="0" class="lineParam">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
                         <span class="text-xl">線のスタイル</span>
                         <div class="flex">
-                            <select class="p-1 rounded mx-2">
-                                <option value="solid">直線</option>
-                                <option value="double">二重直線</option>
-                                <option value="dotted">点線</option>
-                                <option value="dashed">破線</option>
-                                <option value="wavy">波線</option>
+                            <select class="p-1 rounded mx-2 lineValue lineParam" id="lineStyleValue">
+                                <option value="decoration-solid">直線</option>
+                                <option value="decoration-double">二重直線</option>
+                                <option value="decoration-dotted">点線</option>
+                                <option value="decoration-dashed">破線</option>
+                                <option value="decoration-wavy">波線</option>
                             </select>
                         </div>
                     </div>
@@ -202,40 +203,42 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の太さ</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="">Auto</p>
-                            <input type="range" min="0" max="5" id="" value="0">
+                            <p class="w-auto text-xl mx-4 lineValue" id="lineWeightValue">none</p>
+                            <input type="range" min="0" max="4" id="lineWeightParam" value="0" class="lineParam">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">線のオフセット</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="">なし</p>
-                            <input type="range" min="0" max="4" id="" value="0">
+                            <p class="w-auto text-xl mx-4 lineValue" id="lineOffsetValue">none</p>
+                            <input type="range" min="0" max="4" id="lineOffsetParam" value="0" class="lineParam">
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="mb-8 w-full">
-                <h3 class="text-3xl font-semibold font-mono">Aligin</h3>
+                <h3 class="text-3xl font-semibold font-mono">Align</h3>
                 <div class="pl-4">
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の配置(横)</span>
-                        <select class="p-1 rounded mx-2">
-                            <option value="left">左揃え</option>
-                            <option value="center">中央揃え</option>
-                            <option value="right">右揃え</option>
-                            <option value="justify">横幅フィット</option>
+                        <select class="p-1 rounded mx-2 value" id="textAlignXValue">
+                            <option value="none">指定なし</option>
+                            <option value="text-left">左揃え</option>
+                            <option value="text-center">中央揃え</option>
+                            <option value="text-right">右揃え</option>
+                            <option value="text-justify">横幅フィット</option>
                         </select>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の配置(縦)</span>
-                        <select class="p-1 rounded mx-2">
-                            <option value="top">上揃え</option>
-                            <option value="middle">中央揃え</option>
-                            <option value="bottom">下揃え</option>
+                        <select class="p-1 rounded mx-2 value" id="textAlignYValue">
+                            <option value="none">指定なし</option>
+                            <option value="align-top">上揃え</option>
+                            <option value="align-middle">中央揃え</option>
+                            <option value="align-bottom">下揃え</option>
                         </select>
                     </div>
                 </div>
@@ -246,13 +249,15 @@
             <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
                 <div class="h-1/2 flex flex-col mb-8">
                     <h3 class="text-3xl font-mono font-semibold">Preview</h3>
-                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4">ここはプレビュー領域</div>
+                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock">
+                        ここはプレビュー領域</div>
                 </div>
                 <div class="h-1/2 flex flex-col mb-8">
                     <div class="flex justify-between place-items-center">
                         <h3 class="text-3xl font-mono font-semibold">Code</h3>
-                        <button
-                            class="border-2 rounded-full border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1">コードをコピー</button>
+                        <button id="copyButton"
+                            class="border-2 rounded-full border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1"
+                            onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
                     <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
                         id="codeBlock">ここはコード領域</textarea>
@@ -260,6 +265,7 @@
             </div>
         </div>
     </div>
+    <script src="../../js/copyClipboard.js"></script>
     <script src="../../js/textTools.js"></script>
     <script src="../../js/colorSelector.js"></script>
 </body>

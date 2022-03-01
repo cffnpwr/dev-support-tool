@@ -22,7 +22,7 @@ function updateColorValue(defaultClasses, valueDom, ColorDom, DarknessDom, type)
     switch (colorParamColor.value) {
         case "none":
             classAddition = "";
-            outputClassAddition = "";
+            outputClassAddition = "none";
 
             break;
 
