@@ -6,8 +6,6 @@ function changeScrollState() {
     const height = heightDOM.clientHeight;
     const previewHeight = previewHeightDOM.clientHeight;
 
-    console.log(height / 2);
-    console.log(previewHeight);
     if ((height / 2) < previewHeight) {
         if (!heightDOM.classList.contains("fixed"))
             return;

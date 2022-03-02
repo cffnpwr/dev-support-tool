@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
             <img src="../../img/icon.svg" class="h-8 mx-4">
             <span class="mx-2">TailwindCSS Development Support Tools</span>
@@ -47,7 +47,7 @@
                 <h3 class="text-3xl font-semibold font-mono">Tag</h3>
                 <div class="flex justify-between space-x-2 py-1 w-full place-items-center pl-4">
                     <span class="text-xl">タグの種類</span>
-                    <select class="p-1 rounded mx-2" id="tagValue">
+                    <select class="p-1 rounded mx-2 border-2 border-slate-300" id="tagValue">
                         <option value="p">pタグ</option>
                         <option value="span">spanタグ</option>
                     </select>
@@ -60,7 +60,7 @@
                 <div class="pl-4">
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">フォント</span>
-                        <select class="p-1 rounded mx-2 value" id="fontValue">
+                        <select class="p-1 rounded mx-2 value border-2 border-slate-300" id="fontValue">
                             <option value="none" selected>指定なし</option>
                             <option value="font-sans">サンセリフ</option>
                             <option value="font-serif">セリフ</option>
@@ -96,7 +96,7 @@
                         <span class="text-xl">文字色</span>
                         <div class="flex">
                             <div class="rounded w-7 border-2 mr-4 value" id="textColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                            <select class="p-1 rounded mx-2 border-2 border-slate-300" id=" textColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -143,7 +143,8 @@
                     <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
                         <span class="text-xl">線の位置</span>
                         <div class="flex">
-                            <select class="p-1 rounded mx-2 lineParam lineValue" id="lineValue">
+                            <select class="p-1 rounded mx-2 lineParam lineValue border-2 border-slate-300"
+                                id="lineValue">
                                 <option value="no-underline">なし</option>
                                 <option value="overline">上線</option>
                                 <option value="line-through">中央</option>
@@ -156,7 +157,8 @@
                         <span class="text-xl">線の色</span>
                         <div class="flex">
                             <div class="rounded w-7 border-2 mr-4 lineValue" id="lineColorValue" value="none"></div>
-                            <select class="p-1 rounded mx-2 lineParam" id="lineColorParamColor">
+                            <select class="p-1 rounded mx-2 lineParam border-2 border-slate-300"
+                                id="lineColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -190,7 +192,8 @@
                     <div class="flex justify-between space-x-2 py-1 w-full place-items-center">
                         <span class="text-xl">線のスタイル</span>
                         <div class="flex">
-                            <select class="p-1 rounded mx-2 lineValue lineParam" id="lineStyleValue">
+                            <select class="p-1 rounded mx-2 lineValue lineParam border-2 border-slate-300"
+                                id="lineStyleValue">
                                 <option value="decoration-solid">直線</option>
                                 <option value="decoration-double">二重直線</option>
                                 <option value="decoration-dotted">点線</option>
@@ -223,7 +226,7 @@
                 <div class="pl-4">
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の配置(横)</span>
-                        <select class="p-1 rounded mx-2 value" id="textAlignXValue">
+                        <select class="p-1 rounded mx-2 value border-2 border-slate-300" id="textAlignXValue">
                             <option value="none">指定なし</option>
                             <option value="text-left">左揃え</option>
                             <option value="text-center">中央揃え</option>
@@ -234,7 +237,7 @@
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">文字の配置(縦)</span>
-                        <select class="p-1 rounded mx-2 value" id="textAlignYValue">
+                        <select class="p-1 rounded mx-2 value border-2 border-slate-300" id="textAlignYValue">
                             <option value="none">指定なし</option>
                             <option value="align-top">上揃え</option>
                             <option value="align-middle">中央揃え</option>
