@@ -1,5 +1,23 @@
-//書記か？
+//初期化
 window.addEventListener('DOMcontentLoaded', codeGenerator, false);
+
+//size
+const sizeList = ["None", "3/4", "2/4", "1/4"];
+const sizeValueList = ["100%", "75%", "50%", "25%"];
+
+const size = document.getElementById("size");
+const hClass = "h-";
+const wClass = "w-";
+let hCode = "";
+let wCode = "";
+
+size.addEventListener('input', function() {
+    hCode = giveClass(sizeList[size.value], hClass);
+    wCode = giveClass(sizeList[size.value], wClass);
+    document.getElementById("sizeValue").innerHTML = sizeValueList[size.value];
+    codeGenerator();
+}, false);
+
 
 //grayscale
 const grayscale = document.getElementById("grayscale");
@@ -118,6 +136,19 @@ saturate.addEventListener('input', function() {
     codeGenerator();
 }, false);
 
+//opacity
+const opacityList = [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100];
+
+const opacity = document.getElementById("opacity");
+const opacityClass = "opacity-";
+let opacityCode = "";
+
+opacity.addEventListener('input', function() {
+    opacityCode = giveClass(opacityList[opacity.value], opacityClass);
+    document.getElementById("opacityValue").innerHTML = opacityList[opacity.value];
+    codeGenerator();
+}, false);
+
 //クラス付与
 function giveClass(parameter, className) {
     if (parameter == "Auto") {
@@ -131,9 +162,9 @@ function giveClass(parameter, className) {
     }
 };
 
-//コードsay!say!器
+//コード生成器
 function codeGenerator() {
-    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode +'"></img>'
+    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + hCode + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + '"></img>'
     document.getElementById("codeBlock").innerHTML = codeGeneration;
     document.getElementById("previewBlock").innerHTML = codeGeneration;
 };
