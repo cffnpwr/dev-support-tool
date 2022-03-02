@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
             <img src="../../img/icon.svg" class="h-8 mx-4">
             <span class="mx-2">TailwindCSS Development Support Tools</span>
@@ -35,6 +35,23 @@
 
     <div class="flex m-3">
         <div class="w-1/2 m-8">
+
+            <!-- Sizing -->
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Sizing</h3>
+                <div class="pl-4">
+
+                    <!-- percentage -->
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Size</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4 value" id="sizeValue">100%</p>
+                            <input type="range" min="0" max="3" id="size" value="0">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
             <!-- Filters -->
             <div class="mb-8 w-full">
@@ -121,17 +138,36 @@
                             <input type="range" min="0" max="4" id="saturate" value="0">
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <!-- Effects -->
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Effect</h3>
+                <div class="pl-4">
+
+                    <!-- Opacity -->
+                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
+                        <span class="text-xl">Opacity</span>
+                        <div class="flex">
+                            <p class="w-auto text-xl mx-4 value" id="opacityValue">0</p>
+                            <input type="range" min="0" max="14" id="opacity" value="0">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
         </div>
 
         <div id="previewAndCode" class="w-1/2 m-8 relative">
-            <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
-                <div class="h-1/2 flex flex-col mb-8">
+            <div class="top-18 pr-20 h-screen pb-48">
+                <div class="h-3/4 flex flex-col mb-8">
                     <h3 class="text-3xl font-mono font-semibold">Preview</h3>
                     <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock"></div>
                 </div>
-                <div class="h-1/2 flex flex-col mb-8">
+                <div class="h-1/2 flex flex-col mb-8 mt-12">
                     <div class="flex justify-between place-items-center">
                         <h3 class="text-3xl font-mono font-semibold">Code</h3>
                         <button id="copyButton"
