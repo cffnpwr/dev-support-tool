@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200">
+    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
             <img src="../../img/icon.svg" class="h-8 mx-4">
             <span class="mx-2">TailwindCSS Development Support Tools</span>
@@ -184,24 +184,24 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">枠線の太さ</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <p class="w-auto text-xl mx-4" id="divBordersWidthValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divBordersWidth" value="0">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">枠線の角</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <p class="w-auto text-xl mx-4" id="divBordersRadiusValue">Auto</p>
+                            <input type="range" min="0" max="32" id="divBordersRadius" value="0">
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">枠線の色</span>
                         <div class="flex">
-                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                            <div class="rounded w-7 border-2 mr-4" id="divBordersColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="divBordersColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -228,7 +228,7 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
+                            <input type="range" min="0" max="9" id="divBordersColorParamDarkness" value="0">
                         </div>
                     </div>
                 </div>
@@ -282,8 +282,8 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">角度</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <p class="w-auto text-xl mx-4" id="divRotateValue">None</p>
+                            <input type="range" min="0" max="32" id="divRotate" value="0">
                         </div>
                     </div>
                 </div>
@@ -296,8 +296,8 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">配置</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <p class="w-auto text-xl mx-4" id="divFloatValue">None</p>
+                            <input type="range" min="0" max="32" id="divFloat" value="0">
                         </div>
                     </div>
                 </div>
@@ -310,16 +310,16 @@
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">Flex</span>
                         <div>
-                            <input class="mx-2 scale-150" type="checkbox" id="isLine">
-                            <label for="isLine">設定有効化</label>
+                            <input class="mx-2 scale-150" type="checkbox" id="isFlex">
+                            <label for="isFlex">設定有効化</label>
                         </div>
                     </div>
 
                     <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
                         <span class="text-xl">スペース</span>
                         <div class="flex">
-                            <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">None</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <p class="w-auto text-xl mx-4" id="divFlexSpaceValue">None</p>
+                            <input type="range" min="0" max="32" id="divFlexSpace" value="0">
                         </div>
                     </div>
                 </div>
@@ -329,11 +329,6 @@
         <div id="previewAndCode" class="w-1/2 m-8 relative">
             <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
                 <div class="h-1/2 flex flex-col mb-8">
-                    <h3 class="text-3xl font-mono font-semibold">Preview</h3>
-                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock">
-                        ここはプレビュー領域</div>
-                </div>
-                <div class="h-1/2 flex flex-col mb-8">
                     <div class="flex justify-between place-items-center">
                         <h3 class="text-3xl font-mono font-semibold">Code</h3>
                         <button id="copyButton"
@@ -341,14 +336,15 @@
                             onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
                     <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
-                        id="codeBlock">ここはコード領域</textarea>
+                        id="outputCode">ここはコード領域</textarea>
                 </div>
             </div>
         </div>
     </div>
+    <script src="../../js/preview.js"></script>
+    <script src="../../js/copyClipboard.js"></script>
     <script src="../../js/divTools.js"></script>
     <script src="../../js/colorSelector.js"></script>
-    <script src="../../js/copyClipboard.js"></script>
 </body>
 
 </html>
