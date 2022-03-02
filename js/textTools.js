@@ -33,7 +33,7 @@ function updateFontWeightValue(e) {
     // font weight
     let value = "";
     fontWeightValue.textContent = weightList[e.target.value];
-    if (weightList[e.target.value] !== "noen")
+    if (weightList[e.target.value] !== "none")
         value = "font-" + weightList[e.target.value]
     else
         value = "none";
@@ -159,7 +159,8 @@ function updatePreview() {
 
     previewBlock.textContent = null;
     previewBlock.appendChild(preview);
-    console.log(previewClassList);
+
+    changeScrollState();
 
     //コード領域に出力
     const code = preview.outerHTML;
