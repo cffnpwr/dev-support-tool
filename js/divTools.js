@@ -1,5 +1,5 @@
 // 初期化
-window.addEventListener('DOMContentLoaded', codeGenerator, false);
+window.addEventListener('DOMContentLoaded', function () {updatePreview(); }, false);
 
 
 //値配列
@@ -7,6 +7,9 @@ const sizeList = ["Auto", 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11,
 const spaceList = ["None", 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 44, 48, 52, 56, 60, 64, 72, 80, 96];
 const shadowList = ["None", "sm", "md", "lg", "xl", "2xl"];
 
+function updateShadowColorValue() {
+    updateColorValue("rounded w-7 border-2 mr-4 value", "divShadowColorValue", "divShadowColorParamColor", "divShadowColorParamDarkness", "shadow");
+}
 
 // Sizing (縦)
 
@@ -153,32 +156,28 @@ const divShadowColorClass = "&nbspshadow-";
 let divShadowColorCode = "";
 
 divShadowColor.addEventListener('input', function () {
-    divShadowColorPreview.innerHTML = "<div class='w-12 h-7 bgColorBorder bg-" + divShadowColor.value + "'></div>";
+    updateShadowColorValue()
     divShadowColorCode = giveClass(divShadowColor.value, divShadowColorClass);
     codeGenerator();
 }, false);
 
 
 // Background Color
-const divBackgroundColor = document.getElementById("divBackgroundColor");
-let divBackgroundColorPreview = document.getElementById("divBackgroundColorPreview");
-const divBackgroundColorClass = "&nbspbg-";
-let divBackgroundColorCode = "";
+// const divBackgroundColor = document.getElementById("divBackgroundColor");
+// let divBackgroundColorPreview = document.getElementById("divBackgroundColorPreview");
+// const divBackgroundColorClass = "&nbspbg-";
+// let divBackgroundColorCode = "";
 
-divBackgroundColor.addEventListener('input', function () {
-    divBackgroundColorPreview.innerHTML = "<div class='w-12 h-7 bgColorBorder bg-" + divBackgroundColor.value + "'></div>";
-    divBackgroundColorCode = giveClass(divBackgroundColor.value, divBackgroundColorClass);
-    codeGenerator();
-}, false);
+// divBackgroundColor.addEventListener('input', function () {
+//     divBackgroundColorPreview.innerHTML = "<div class='w-12 h-7 bgColorBorder bg-" + divBackgroundColor.value + "'></div>";
+//     divBackgroundColorCode = giveClass(divBackgroundColor.value, divBackgroundColorClass);
+//     codeGenerator();
+// }, false);
 
 
 // クラス付与
 function giveClass(parameter, className) {
-    if (parameter == "Auto") {
-        return "";
-    } else if (parameter == "None") {
-        return "";
-    } else if (parameter == "") {
+    if (parameter == "Auto" || parameter == "None" || parameter == "") {
         return "";
     } else {
         return className + parameter;
@@ -188,6 +187,70 @@ function giveClass(parameter, className) {
 
 // コード生成器
 function codeGenerator() {
-    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + divShadowSizeCode + divShadowColorCode + divBackgroundColorCode + '"></div>'
+    const codeGeneration = '<div class="' + divSizeHeightCode + divSizeWidthCode + divSpacePaddingTopCode + divSpacePaddingBottomCode + divSpacePaddingRightCode + divSpacePaddingLeftCode + divSpaceMarginTopCode + divSpaceMarginBottomCode + divSpaceMarginRightCode + divSpaceMarginLeftCode + '"></div>'
     document.getElementById("outputCode").innerHTML = codeGeneration;
 };
+
+function updatePreview() {
+    //コード領域のDOM
+    const codeBlock = document.getElementById("codeBlock");
+    //プレビュー領域のDOM
+    const previewBlock = document.getElementById("previewBlock");
+    //入力されたテキスト
+    const inputText = document.getElementById("inputText").value.replace(/\r?\n/g, '<br>');
+
+    const tag = document.getElementById("tagValue").value;
+
+    //プレビュー用のDOMを作成
+    const preview = document.createElement(tag);
+
+    //出力されるDOMのclassのリスト
+    let previewClassList = [];
+
+    const valueDOMs = document.getElementsByClassName("value");
+
+    for (const dom of valueDOMs) {
+        const value = dom.value;
+
+        if (value !== "none" && value !== undefined)
+            previewClassList.push(value);
+    }
+
+    let flag;
+
+    if (document.getElementById("isLine").checked === true) {
+        flag = true;
+
+        const lineValueDOMs = document.getElementsByClassName("lineValue");
+
+        for (const dom of lineValueDOMs) {
+            const value = dom.value;
+
+            if (value !== "none" && value !== undefined)
+                previewClassList.push(value);
+        }
+    } else
+        flag = false;
+
+    const lineParamDOMs = document.getElementsByClassName("lineParam");
+
+    for (const dom of lineParamDOMs)
+        if (flag !== true)
+            dom.setAttribute("disabled", "true");
+
+        else
+            dom.removeAttribute("disabled");
+
+    preview.innerHTML = inputText;
+    if (previewClassList.length !== 0)
+        preview.classList.add(...previewClassList);
+
+    previewBlock.textContent = null;
+    previewBlock.appendChild(preview);
+    console.log(previewClassList);
+
+    //コード領域に出力
+    const code = preview.outerHTML;
+
+    codeBlock.value = code;
+}
