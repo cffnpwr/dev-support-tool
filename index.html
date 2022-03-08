@@ -3,17 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/icon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/titleScroll.js"></script>
-    <script src="js/textScroll.js"></script>
     <title>ここは開発支援ツールのトップページだよ！！</title>
 </head>
 
 <body>
-    <h1 class="scroll">ここは開発支援ツールのトップページだよ！！</h1>
-    <h2 class="scroll">タイトルをよく見てね</h2>
+    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
+        <div class="flex text-xl place-items-center">
+            <img src="../../img/icon.svg" class="h-8 mx-4">
+            <span class="mx-2">TailwindCSS Development Support Tools</span>
+        </div>
+        <div class="flex place-items-center text-lg">
+            <a href="./html/usage/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Usage</a>
+            <a href="./html/divTools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Div
+                Tools</a>
+            <a href="./html/textTools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Text
+                Tools</a>
+            <a href="./html/imgTools/index.html"
+                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Image
+                Tools</a>
+        </div>
+    </header>
+
+    <div class="container mx-auto my-12 grid grid-cols-1 xl:grid-cols-2 gap-8 w-full" id="contentsBlocks">
+        <div
+            class="border-2 border-slate-200 rounded-xl h-full w-full relative hover:scale-125 hover:z-50 hover:shadow-2xl duration-500 hoverable">
+            <img src="./img/usagePreview.png" class="rounded-xl">
+            <p
+                class="absolute font-mono font-bold text-3xl bg-slate-200/90 text-slate-800 rounded-b-xl px-8 py-4 z-100 bottom-0 w-full">
+                Usage
+            </p>
+        </div>
+        <div
+            class="border-2 border-slate-200 rounded-xl h-full w-full relative hover:scale-125 hover:z-50 hover:shadow-2xl duration-500 hoverable">
+            <img src="./img/divToolsPreview.png" class=" rounded-xl">
+            <p
+                class="absolute font-mono font-bold text-3xl bg-slate-200/90 text-slate-800 rounded-b-xl px-8 py-4 z-100 bottom-0 w-full">
+                Div Tools
+            </p>
+        </div>
+        <div
+            class="border-2 border-slate-200 rounded-xl h-full w-full relative hover:scale-125 hover:z-50 hover:shadow-2xl duration-500 hoverable">
+            <img src="./img/textToolsPreview.png" class="rounded-xl">
+            <p
+                class="absolute font-mono font-bold text-3xl bg-slate-200/90 text-slate-800 rounded-b-xl px-8 py-4 z-100 bottom-0 w-full">
+                Text Tools
+            </p>
+        </div>
+        <div
+            class="border-2 border-slate-200 rounded-xl h-full w-full relative hover:scale-125 hover:z-50 hover:shadow-2xl duration-500 hoverable">
+            <img src="./img/ImgToolsPreview.png" class="rounded-xl">
+            <p
+                class="absolute font-mono font-bold text-3xl bg-slate-200/90 text-slate-800 rounded-b-xl px-8 py-4 z-100 bottom-0 w-full">
+                Image Tools
+            </p>
+        </div>
+    </div>
+    <script src="./js/blockHover.js"></script>
 </body>
 
 </html>
