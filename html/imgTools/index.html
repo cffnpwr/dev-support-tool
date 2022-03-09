@@ -13,38 +13,39 @@
 </head>
 
 <body>
-    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
+    <div
+        class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
             <img src="../../img/icon.svg" class="h-8 mx-4">
-            <span class="mx-2">TailwindCSS Development Support Tools</span>
+            <span class="hidden md:inline mx-2">TailwindCSS Development Support Tools</span>
         </a>
-        <div class="flex place-items-center text-lg">
+        <div class="flex place-items-center text-lg mx-8">
             <a href="../usage/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Usage</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Usage</a>
             <a href="../divTools/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Div
-                Tools</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Div
+                <span class="hidden lg:inline">Tools</span></a>
             <a href="../textTools/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Text
-                Tools</a>
-            <span 
-                class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Image
-                Tools</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Text
+                <span class="hidden lg:inline">Tools</span></a>
+            <span
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Image
+                <span class="hidden lg:inline">Tools</span></span>
         </div>
-    </header>
+    </div>
 
-    <div class="flex m-3">
-        <div class="w-1/2 m-8">
+    <div class="flex flex-col-reverse lg:flex-row m-3">
+        <div id="settings" class="lg:w-1/2 m-8">
 
             <!-- Sizing -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Sizing</h3>
-                <div class="pl-4">
+                <div class="flex flex-col pl-4">
 
                     <!-- percentage -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Size</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Size</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="sizeValue">100%</p>
                             <input type="range" min="0" max="3" id="size" value="0">
                         </div>
@@ -56,84 +57,84 @@
             <!-- Filters -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Filters</h3>
-                <div class="pl-4">
+                <div class="flex flex-col pl-4">
 
                     <!-- Grayscale -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Grayscale</span>
-                        <div>
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Grayscale</span>
+                        <div class="float-right">
                             <input class="mx-2 scale-150" type="checkbox" id="grayscale">
-                            <label for="isLine" >設定有効化</label>
+                            <label for="isLine">設定有効化</label>
                         </div>
                     </div>
 
                     <!-- Invert -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Invert</span>
-                        <div>
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Invert</span>
+                        <div class="float-right">
                             <input class="mx-2 scale-150" type="checkbox" id="invert">
                             <label for="isLine">設定有効化</label>
                         </div>
                     </div>
 
                     <!-- sepia -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Sepia</span>
-                        <div>
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Sepia</span>
+                        <div class="float-right">
                             <input class="mx-2 scale-150" type="checkbox" id="sepia">
                             <label for="isLine">設定有効化</label>
                         </div>
                     </div>
 
                     <!-- blur -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Blur</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Blur</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="blurValue">None</p>
                             <input type="range" min="0" max="6" id="blur" value="0">
                         </div>
                     </div>
 
                     <!-- brightness -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Brightness</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Brightness</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="brightnessValue">0</p>
                             <input type="range" min="0" max="10" id="brightness" value="0">
                         </div>
                     </div>
 
                     <!-- contrast -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Contrast</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Contrast</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="contrastValue">0</p>
                             <input type="range" min="0" max="5" id="contrast" value="0">
                         </div>
                     </div>
 
                     <!-- dropShadow -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">DropShadow</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">DropShadow</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="dropShadowValue">Auto</p>
                             <input type="range" min="0" max="5" id="dropShadow" value="0">
                         </div>
                     </div>
 
                     <!-- hueRotate -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">HueRotate</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">HueRotate</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="hueRotateValue">0</p>
                             <input type="range" min="0" max="5" id="hueRotate" value="0">
                         </div>
                     </div>
 
                     <!-- saturate -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Saturate</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Saturate</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="saturateValue">0</p>
                             <input type="range" min="0" max="4" id="saturate" value="0">
                         </div>
@@ -145,12 +146,12 @@
             <!-- Effects -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Effect</h3>
-                <div class="pl-4">
+                <div class="flex flex-col pl-4">
 
                     <!-- Opacity -->
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Opacity</span>
-                        <div class="flex">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">Opacity</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="opacityValue">0</p>
                             <input type="range" min="0" max="14" id="opacity" value="0">
                         </div>
@@ -158,14 +159,15 @@
 
                 </div>
             </div>
-            
+
         </div>
 
-        <div id="previewAndCode" class="w-1/2 m-8 relative">
-            <div class="top-18 pr-20 h-screen pb-48">
+        <div id="previewAndCode" class="lg:w-1/2 m-8 lg:relative">
+            <div class="lg:fixed lg:top-18 lg:w-1/2 lg:pr-20 lg:h-screen lg:pb-48">
                 <div class="h-3/4 flex flex-col mb-8">
                     <h3 class="text-3xl font-mono font-semibold">Preview</h3>
-                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock"></div>
+                    <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock">
+                    </div>
                 </div>
                 <div class="h-1/2 flex flex-col mb-8 mt-12">
                     <div class="flex justify-between place-items-center">
@@ -174,7 +176,8 @@
                             class="border-2 rounded-full transition duration-300  border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1"
                             onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
-                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="codeBlock"></textarea>
+                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
+                        id="codeBlock"></textarea>
                 </div>
             </div>
         </div>

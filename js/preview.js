@@ -7,17 +7,17 @@ function changeScrollState() {
     const previewHeight = previewHeightDOM.clientHeight;
 
     if ((height / 2) < previewHeight) {
-        if (!heightDOM.classList.contains("fixed"))
+        if (!heightDOM.classList.contains("lg:fixed"))
             return;
     } else {
-        if (!heightDOM.classList.contains("w-full"))
+        if (!heightDOM.classList.contains("lg:w-full"))
             return;
     }
 
-    pAndCDOM.classList.toggle("relative");
-    heightDOM.classList.toggle("fixed");
-    heightDOM.classList.toggle("top-18");
-    heightDOM.classList.toggle("w-1/2");
-    heightDOM.classList.toggle("pr-20");
-    heightDOM.classList.toggle("w-full");
+    pAndCDOM.classList.toggle("lg:relative");
+    heightDOM.classList.toggle("lg:fixed");
+    heightDOM.classList.toggle("lg:top-18");
+    heightDOM.classList.toggle("lg:w-1/2");
+    heightDOM.classList.toggle("lg:pr-20");
+    heightDOM.classList.toggle("lg:w-full");
 }

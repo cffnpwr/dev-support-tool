@@ -13,46 +13,49 @@
 </head>
 
 <body>
-    <header class="sticky top-0 flex h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
+    <div
+        class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
             <img src="../../img/icon.svg" class="h-8 mx-4">
-            <span class="mx-2">TailwindCSS Development Support Tools</span>
+            <span class="hidden md:inline mx-2">TailwindCSS Development Support Tools</span>
         </a>
-        <div class="flex place-items-center text-lg">
+        <div class="flex place-items-center text-lg mx-8">
             <a href="../usage/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Usage</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Usage</a>
             <span
-                class="px-3 py-1 m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Div
-                Tools</span>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-800 bg-slate-800 text-slate-100 rounded-full border-solid">Div
+                <span class="hidden lg:inline">Tools</span></span>
             <a href="../textTools/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Text
-                Tools</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Text
+                <span class="hidden lg:inline">Tools</span></a>
             <a href="../imgTools/index.html"
-                class="px-3 py-1 m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 rounded-full border-solid">Image
-                Tools</a>
+                class="px-3 py-1 m-1 sm:m-2 border-2 border-slate-100 bg-slate-100 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 transition duration-300  rounded-full border-solid">Image
+                <span class="hidden lg:inline">Tools</span></a>
         </div>
-    </header>
+    </div>
 
-    <div class="flex m-3">
-        <div id="settings" class="w-1/2 m-8">
+    <div class="flex flex-col-reverse lg:flex-row m-3">
+        <div id="settings" class="lg:w-1/2 m-8">
             <div class="mb-8 w-full">
 
                 <!-- Sizing -->
                 <h3 class="text-3xl font-semibold font-mono">Sizing</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">要素の大きさ (横)</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">要素の大きさ (横)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSizeHeihgtValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divSizeHeight" value="0">
+                            <input type="range" min="0" max="32" id="divSizeHeight" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">要素の大きさ (縦)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">要素の大きさ (縦)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSizeWidthValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divSizeWidth" value="0">
+                            <input type="range" min="0" max="32" id="divSizeWidth" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -61,68 +64,79 @@
             <!-- Spacing -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Spacing</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Padding (上)</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Padding (上)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpacePaddingTopValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingTop" value="0">
+                            <input type="range" min="0" max="32" id="divSpacePaddingTop" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Padding (下)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Padding (下)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpacePaddingBottomValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingBottom" value="0">
+                            <input type="range" min="0" max="32" id="divSpacePaddingBottom" value="0"
+                                class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Padding (右)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Padding (右)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpacePaddingRightValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingRight" value="0">
+                            <input type="range" min="0" max="32" id="divSpacePaddingRight" value="0"
+                                class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Padding (左)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Padding (左)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpacePaddingLeftValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpacePaddingLeft" value="0">
+                            <input type="range" min="0" max="32" id="divSpacePaddingLeft" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Margin (上)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Margin (上)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpaceMarginTopValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginTop" value="0">
+                            <input type="range" min="0" max="32" id="divSpaceMarginTop" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Margin (下)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Margin (下)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpaceMarginBottomValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginBottom" value="0">
+                            <input type="range" min="0" max="32" id="divSpaceMarginBottom" value="0"
+                                class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Margin (右)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Margin (右)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpaceMarginRightValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginRight" value="0">
+                            <input type="range" min="0" max="32" id="divSpaceMarginRight" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Margin (左)</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Margin (左)</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divSpaceMarginLeftValue">None</p>
-                            <input type="range" min="0" max="32" id="divSpaceMarginLeft" value="0">
+                            <input type="range" min="0" max="32" id="divSpaceMarginLeft" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -131,18 +145,20 @@
             <!-- Box Shadow -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Box Shadow</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">影の大きさ</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">影の大きさ</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divShadowSizeValue">Auto</p>
-                            <input type="range" min="0" max="5" id="divShadowSize" value="0">
+                            <input type="range" min="0" max="5" id="divShadowSize" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">影の色</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">影の色</span>
+                        <div class="flex float-right">
                             <div class="rounded w-7 border-2 mr-4" id="divShadowColorValue"></div>
                             <select class="p-1 rounded mx-2" id="divShadowColorParamColor">
                                 <option value="none">指定なし</option>
@@ -171,7 +187,8 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="divShadowColorParamDarkness" value="0">
+                            <input type="range" min="0" max="9" id="divShadowColorParamDarkness" value="0"
+                                class="float-right">
                         </div>
                     </div>
                 </div>
@@ -180,26 +197,29 @@
             <!-- Borders -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Borders</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">枠線の太さ</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">枠線の太さ</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divBordersWidthValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divBordersWidth" value="0">
+                            <input type="range" min="0" max="32" id="divBordersWidth" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">枠線の角</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">枠線の角</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divBordersRadiusValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divBordersRadius" value="0">
+                            <input type="range" min="0" max="32" id="divBordersRadius" value="0" class="float-right">
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">枠線の色</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">枠線の色</span>
+                        <div class="flex float-right">
                             <div class="rounded w-7 border-2 mr-4" id="divBordersColorValue"></div>
                             <select class="p-1 rounded mx-2" id="divBordersColorParamColor">
                                 <option value="none">指定なし</option>
@@ -228,7 +248,8 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="divBordersColorParamDarkness" value="0">
+                            <input type="range" min="0" max="9" id="divBordersColorParamDarkness" value="0"
+                                class="float-right">
                         </div>
                     </div>
                 </div>
@@ -237,10 +258,11 @@
             <!-- Backgroud Color -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Background Color</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">背景の色</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">背景の色</span>
+                        <div class="flex float-right">
                             <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
                             <select class="p-1 rounded mx-2" id="textColorParamColor">
                                 <option value="none">指定なし</option>
@@ -269,7 +291,8 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0">
+                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0"
+                                class="float-right">
                         </div>
                     </div>
                 </div>
@@ -278,12 +301,13 @@
             <!-- Rotate -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Rotate</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">角度</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">角度</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divRotateValue">None</p>
-                            <input type="range" min="0" max="32" id="divRotate" value="0">
+                            <input type="range" min="0" max="32" id="divRotate" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -292,12 +316,13 @@
             <!-- Floats -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Floats</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">配置</span>
-                        <div class="flex">
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">配置</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divFloatValue">None</p>
-                            <input type="range" min="0" max="32" id="divFloat" value="0">
+                            <input type="range" min="0" max="32" id="divFloat" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -306,28 +331,30 @@
             <!-- Flex -->
             <div class="mb-8 w-full">
                 <h3 class="text-3xl font-semibold font-mono">Flex</h3>
-                <div class="pl-4">
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">Flex</span>
-                        <div>
+                <div class="flex flex-col pl-4">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">Flex</span>
+                        <div class="float-right">
                             <input class="mx-2 scale-150" type="checkbox" id="isFlex">
                             <label for="isFlex">設定有効化</label>
                         </div>
                     </div>
 
-                    <div class="flex justify-between space-x-2 my-2 py-1 w-full place-items-center">
-                        <span class="text-xl">スペース</span>
-                        <div class="flex">
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">スペース</span>
+                        <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divFlexSpaceValue">None</p>
-                            <input type="range" min="0" max="32" id="divFlexSpace" value="0">
+                            <input type="range" min="0" max="32" id="divFlexSpace" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="previewAndCode" class="w-1/2 m-8 relative">
-            <div class="fixed top-18 w-1/2 pr-20 h-screen pb-48">
+        <div id="previewAndCode" class="lg:w-1/2 m-8 relative">
+            <div class="lg:fixed lg:top-18 lg:w-1/2 lg:pr-20 lg:h-screen lg:pb-48">
                 <div class="h-1/2 flex flex-col mb-8">
                     <div class="flex justify-between place-items-center">
                         <h3 class="text-3xl font-mono font-semibold">Code</h3>
