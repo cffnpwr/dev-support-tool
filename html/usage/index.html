@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../img/icon.svg">
+    <link rel="stylesheet" href="../../css/fadeout.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/titleScroll.js"></script>
     <title>TailwindCSS DevTools</title>
 </head>
 
 <body>
+    <div class="absolute inset-0 bg-white z-50" id="nowLoading">
+        <img src="../../img/icon.svg" alt="TailwindCSS Logo"
+            class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
+        <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
+    </div>
     <div
         class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
@@ -32,6 +38,7 @@
                 <span class="hidden lg:inline">Tools</span></a>
         </div>
     </div>
+    <script src="../../js/loading.js"></script>
 </body>
 
 </html>
