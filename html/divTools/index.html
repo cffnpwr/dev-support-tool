@@ -14,10 +14,12 @@
 </head>
 
 <body>
-    <div class="absolute inset-0 bg-white z-50" id="nowLoading">
-        <img src="../../img/icon.svg" alt="TailwindCSS Logo"
-            class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
-        <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
+    <div class="relative">
+        <div class="fixed inset-0 bg-white z-50" id="nowLoading">
+            <img src="../../img/icon.svg" alt="TailwindCSS Logo"
+                class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
+            <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
+        </div>
     </div>
     <div
         class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">

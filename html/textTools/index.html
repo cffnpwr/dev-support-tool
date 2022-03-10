@@ -14,10 +14,12 @@
 </head>
 
 <body>
-    <div class="absolute inset-0 bg-white z-50" id="nowLoading">
-        <img src="../../img/icon.svg" alt="TailwindCSS Logo"
-            class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
-        <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
+    <div class="relative">
+        <div class="fixed inset-0 bg-white z-50" id="nowLoading">
+            <img src="../../img/icon.svg" alt="TailwindCSS Logo"
+                class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
+            <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
+        </div>
     </div>
     <div
         class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
@@ -102,7 +104,7 @@
                     <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
                         <span class="block text-xl">文字色</span>
                         <div class="flex float-right">
-                            <div class="rounded w-7 border-2 mr-4 value" id="textColorValue"></div>
+                            <div class="rounded w-7 border-2 sm:mr-4 value" id="textColorValue"></div>
                             <select class="p-1 rounded mx-2 border-2 border-slate-300" id="textColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
@@ -163,7 +165,8 @@
                     <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
                         <span class="block text-xl">線の色</span>
                         <div class="flex float-right">
-                            <div class="rounded w-7 border-2 mr-4 lineValue" id="lineColorValue" value="none"></div>
+                            <div class="rounded w-7 border-2 sm:mr-4 lineValue" id="lineColorValue" value="none">
+                            </div>
                             <select class="p-1 rounded mx-2 lineParam border-2 border-slate-300"
                                 id="lineColorParamColor">
                                 <option value="none">指定なし</option>

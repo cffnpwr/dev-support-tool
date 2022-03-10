@@ -6,7 +6,6 @@ for (const content of contentsBlocks) {
 
 function hoverIn(e) {
     const target = e.target;
-    console.log(e.target);
 
     if (target.classList.contains("hoverable") !== true)
         return;
@@ -16,7 +15,7 @@ function hoverIn(e) {
 
     const notHovered = document.getElementsByClassName("hoverable");
     for (const nh of notHovered)
-        nh.classList.add("blur", "-z-100");
+        nh.classList.add("blur-sm", "-z-100");
 }
 
 function hoverOut(e) {
@@ -27,7 +26,7 @@ function hoverOut(e) {
 
     const notHovered = document.getElementsByClassName("hoverable");
     for (const nh of notHovered)
-        nh.classList.remove("blur", "-z-100");
+        nh.classList.remove("blur-sm", "-z-100");
 
     target.classList.add("hoverable");
     target.classList.remove("hovering");
