@@ -315,5 +315,5 @@ function codeGenerator() {
         + divFloatCode
         + divFlexCode
         + '"></div>'
-    document.getElementById("outputCode").innerHTML = codeGeneration;
+    document.getElementById("codeBlock").innerHTML = codeGeneration;
 };
