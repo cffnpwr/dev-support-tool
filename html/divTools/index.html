@@ -156,10 +156,19 @@
                 <div class="flex flex-col pl-4">
                     <div
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">影</span>
+                        <div class="float-right">
+                            <input class="mx-2 scale-150" type="checkbox" id="isShadow">
+                            <label for="isShadow" >設定有効化</label>
+                        </div>
+                    </div>
+                    
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">影の大きさ</span>
                         <div class="flex float-right">
-                            <p class="w-auto text-xl mx-4" id="divShadowSizeValue">Auto</p>
-                            <input type="range" min="0" max="5" id="divShadowSize" value="0" class="float-right">
+                            <p class="w-auto text-xl mx-4" id="divShadowSizeValue">None</p>
+                            <input type="range" min="0" max="5" id="divShadowSize" value="0" class="float-right" disabled>
                         </div>
                     </div>
 
@@ -208,10 +217,19 @@
                 <div class="flex flex-col pl-4">
                     <div
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
+                        <span class="block text-xl">枠線</span>
+                        <div class="float-right">
+                            <input class="mx-2 scale-150" type="checkbox" id="isBorders">
+                            <label for="isBorders">設定有効化</label>
+                        </div>
+                    </div>
+
+                    <div
+                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">枠線の太さ</span>
                         <div class="flex float-right">
-                            <p class="w-auto text-xl mx-4" id="divBordersWidthValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divBordersWidth" value="0" class="float-right">
+                            <p class="w-auto text-xl mx-4" id="divBordersWidthValue">None</p>
+                            <input type="range" min="0" max="4" id="divBordersWidth" value="0" class="float-right" disabled>
                         </div>
                     </div>
 
@@ -219,8 +237,8 @@
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">枠線の角</span>
                         <div class="flex float-right">
-                            <p class="w-auto text-xl mx-4" id="divBordersRadiusValue">Auto</p>
-                            <input type="range" min="0" max="32" id="divBordersRadius" value="0" class="float-right">
+                            <p class="w-auto text-xl mx-4" id="divBordersRadiusValue">None</p>
+                            <input type="range" min="0" max="7" id="divBordersRadius" value="0" class="float-right" disabled>
                         </div>
                     </div>
 
@@ -315,7 +333,7 @@
                         <span class="block text-xl">角度</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divRotateValue">None</p>
-                            <input type="range" min="0" max="32" id="divRotate" value="0" class="float-right">
+                            <input type="range" min="0" max="9" id="divRotate" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -330,7 +348,7 @@
                         <span class="block text-xl">配置</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divFloatValue">None</p>
-                            <input type="range" min="0" max="32" id="divFloat" value="0" class="float-right">
+                            <input type="range" min="0" max="2" id="divFloat" value="0" class="float-right">
                         </div>
                     </div>
                 </div>
@@ -348,19 +366,9 @@
                             <label for="isFlex">設定有効化</label>
                         </div>
                     </div>
-
-                    <div
-                        class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
-                        <span class="block text-xl">スペース</span>
-                        <div class="flex float-right">
-                            <p class="w-auto text-xl mx-4" id="divFlexSpaceValue">None</p>
-                            <input type="range" min="0" max="32" id="divFlexSpace" value="0" class="float-right">
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-
         <div id="previewAndCode" class="lg:w-1/2 m-8 relative">
             <div class="lg:fixed lg:top-18 lg:w-1/2 lg:pr-20 lg:h-screen lg:pb-48">
                 <div class="h-1/2 flex flex-col mb-8">
@@ -380,7 +388,6 @@
     <script src="../../js/preview.js"></script>
     <script src="../../js/copyClipboard.js"></script>
     <script src="../../js/divTools.js"></script>
-    <script src="../../js/colorSelector.js"></script>
 </body>
 
 </html>
