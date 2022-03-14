@@ -233,6 +233,16 @@ divBordersRadius.addEventListener('input', function () {
 
 
 // Background Color
+function updateBackgroundColorValue() {
+    updateColorValue("rounded w-7 border-2 mr-4 backgroundColorValue", "backgroundColorValue", "backgroundColorParamColor", "backgroundColorParamDarkness", "bg");
+    codeGenerator();
+}
+
+const backgroundColorParamColor = document.getElementById("backgroundColorParamColor");
+const backgroundColorParamDarkness = document.getElementById("backgroundColorParamDarkness");
+
+backgroundColorParamColor.oninput = updateBackgroundColorValue;
+backgroundColorParamDarkness.oninput = updateBackgroundColorValue;
 
 
 // Rotate
@@ -311,6 +321,7 @@ function codeGenerator() {
         + divShadowSizeCode
         + divBordersWidthCode
         + divBordersRadiusCode
+        + backgroundColorParamColor.value
         + divRotateCode
         + divFloatCode
         + divFlexCode
