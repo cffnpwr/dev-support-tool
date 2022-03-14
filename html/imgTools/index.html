@@ -55,7 +55,7 @@
                         <span class="block text-xl">Size</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="sizeValue">100%</p>
-                            <input type="range" min="0" max="3" id="size" value="0">
+                            <input type="range" min="0" max="3" id="size" value="3">
                         </div>
                     </div>
 
@@ -108,7 +108,7 @@
                         <span class="block text-xl">Brightness</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4 value" id="brightnessValue">0</p>
-                            <input type="range" min="0" max="10" id="brightness" value="0">
+                            <input type="range" min="0" max="9" id="brightness" value="4">
                         </div>
                     </div>
 
@@ -171,10 +171,11 @@
         </div>
 
         <div id="previewAndCode" class="lg:w-1/2 m-8 lg:relative">
-            <div class="lg:fixed lg:top-18 lg:w-1/2 lg:pr-20 lg:h-screen lg:pb-48">
+            <div class="lg:top-18 lg:pr-20 lg:h-screen lg:pb-48">
                 <div class="h-3/4 flex flex-col mb-8">
                     <h3 class="text-3xl font-mono font-semibold">Preview</h3>
                     <div class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="previewBlock">
+                        <img src="img/ここに画像の名前を入力してね.jpg"></img>
                     </div>
                 </div>
                 <div class="h-1/2 flex flex-col mb-8 mt-12">
@@ -184,8 +185,7 @@
                             class="border-2 rounded-full transition duration-300  border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1"
                             onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
-                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
-                        id="codeBlock"></textarea>
+                    <textarea readonly class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="codeBlock"></textarea>
                 </div>
             </div>
         </div>

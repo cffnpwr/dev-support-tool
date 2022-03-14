@@ -2,17 +2,14 @@
 window.addEventListener('DOMcontentLoaded', codeGenerator, false);
 
 //size
-const sizeList = ["None", "3/4", "2/4", "1/4"];
-const sizeValueList = ["100%", "75%", "50%", "25%"];
+const sizeList = ["1/4", "2/4", "3/4", "None"];
+const sizeValueList = ["25%", "50%", "75%", "100%"];
 
 const size = document.getElementById("size");
-const hClass = "h-";
 const wClass = "w-";
-let hCode = "";
 let wCode = "";
 
 size.addEventListener('input', function() {
-    hCode = giveClass(sizeList[size.value], hClass);
     wCode = giveClass(sizeList[size.value], wClass);
     document.getElementById("sizeValue").innerHTML = sizeValueList[size.value];
     codeGenerator();
@@ -72,7 +69,8 @@ blur.addEventListener('input', function() {
 }, false);
 
 //brightness
-const brightnessList = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150, 200];
+const brightnessList = [50, 75, 90, 95, 0, 105, 110, 125, 150, 200];
+const brightnessValueList = [-4, -3, -2, -1, 0, "+1", "+2", "+3", "+4", "+5"];
 
 const brightness = document.getElementById("brightness");
 const brightnessClass = "brightness-";
@@ -80,7 +78,7 @@ let brightnessCode = "";
 
 brightness.addEventListener('input', function() {
     brightnessCode = giveClass(brightnessList[brightness.value], brightnessClass);
-    document.getElementById("brightnessValue").innerHTML = brightnessList[brightness.value];
+    document.getElementById("brightnessValue").innerHTML = brightnessValueList[brightness.value];
     codeGenerator();
 }, false);
 
@@ -164,7 +162,7 @@ function giveClass(parameter, className) {
 
 //コード生成器
 function codeGenerator() {
-    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + hCode + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + '"></img>'
+    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + '"></img>'
     document.getElementById("codeBlock").innerHTML = codeGeneration;
     document.getElementById("previewBlock").innerHTML = codeGeneration;
 };
