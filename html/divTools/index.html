@@ -284,8 +284,8 @@
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">背景の色</span>
                         <div class="flex float-right">
-                            <div class="rounded w-7 border-2 mr-4" id="textColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="textColorParamColor">
+                            <div class="rounded w-7 border-2 mr-4 backgroundColorValue" id="backgroundColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="backgroundColorParamColor">
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -312,7 +312,7 @@
                                 <option value="pink">pink</option>
                                 <option value="rose">rose</option>
                             </select>
-                            <input type="range" min="0" max="9" id="textColorParamDarkness" value="0"
+                            <input type="range" min="0" max="9" id="backgroundColorParamDarkness" value="0"
                                 class="float-right">
                         </div>
                     </div>
@@ -374,7 +374,8 @@
                             onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
                     <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
-                        id="codeBlock">ここはコード領域</textarea>
+                        id="codeBlock"
+                        readonly>ここはコード領域</textarea>
                 </div>
             </div>
         </div>
@@ -382,6 +383,7 @@
     <script src="../../js/preview.js"></script>
     <script src="../../js/copyClipboard.js"></script>
     <script src="../../js/divTools.js"></script>
+    <script src="../../js/colorSelector.js"></script>
 </body>
 
 </html>
