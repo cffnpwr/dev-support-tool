@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../img/icon.svg">
-    <link rel="stylesheet" href="../../css/fadeout.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Div Tools / TailwindCSS DevTools</title>
     <style>
@@ -14,13 +13,6 @@
 </head>
 
 <body>
-    <div class="relative">
-        <div class="fixed inset-0 bg-white z-50" id="nowLoading">
-            <img src="../../img/icon.svg" alt="TailwindCSS Logo"
-                class="w-1/5 animate-spin mx-auto mt-72 mb-8 md:mb-16 xl:mb-32">
-            <span class="block text-center text-2xl animate-pulse">Now Loading...</span>
-        </div>
-    </div>
     <div
         class="sticky top-0 flex justify-between w-full h-16 text-slate-900 bg-slate-100 border-b border-slate-200 z-50">
         <a href="../../index.html" class="flex text-xl place-items-center">
@@ -159,16 +151,17 @@
                         <span class="block text-xl">影</span>
                         <div class="float-right">
                             <input class="mx-2 scale-150" type="checkbox" id="isShadow">
-                            <label for="isShadow" >設定有効化</label>
+                            <label for="isShadow">設定有効化</label>
                         </div>
                     </div>
-                    
+
                     <div
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">影の大きさ</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divShadowSizeValue">None</p>
-                            <input type="range" min="0" max="5" id="divShadowSize" value="0" class="float-right" disabled>
+                            <input type="range" min="0" max="5" id="divShadowSize" value="0" class="float-right"
+                                disabled>
                         </div>
                     </div>
 
@@ -229,7 +222,8 @@
                         <span class="block text-xl">枠線の太さ</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divBordersWidthValue">None</p>
-                            <input type="range" min="0" max="4" id="divBordersWidth" value="0" class="float-right" disabled>
+                            <input type="range" min="0" max="4" id="divBordersWidth" value="0" class="float-right"
+                                disabled>
                         </div>
                     </div>
 
@@ -238,7 +232,8 @@
                         <span class="block text-xl">枠線の角</span>
                         <div class="flex float-right">
                             <p class="w-auto text-xl mx-4" id="divBordersRadiusValue">None</p>
-                            <input type="range" min="0" max="7" id="divBordersRadius" value="0" class="float-right" disabled>
+                            <input type="range" min="0" max="7" id="divBordersRadius" value="0" class="float-right"
+                                disabled>
                         </div>
                     </div>
 
@@ -384,7 +379,6 @@
             </div>
         </div>
     </div>
-    <script src="../../js/loading.js"></script>
     <script src="../../js/preview.js"></script>
     <script src="../../js/copyClipboard.js"></script>
     <script src="../../js/divTools.js"></script>
