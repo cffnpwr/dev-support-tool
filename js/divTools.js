@@ -1,7 +1,3 @@
-// 初期化
-window.addEventListener('DOMContentLoaded', codeGenerator, false);
-
-
 //値配列
 const sizeList = ["Auto", 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 44, 48, 52, 56, 60, 64, 72, 80, 96];
 const spaceList = ["None", 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 44, 48, 52, 56, 60, 64, 72, 80, 96];
@@ -233,16 +229,24 @@ divBordersRadius.addEventListener('input', function () {
 
 
 // Background Color
-function updateBackgroundColorValue() {
-    updateColorValue("rounded w-7 border-2 mr-4 backgroundColorValue", "backgroundColorValue", "backgroundColorParamColor", "backgroundColorParamDarkness", "bg");
-    codeGenerator();
-}
+let divBackgroundColorCode = "";
 
 const backgroundColorParamColor = document.getElementById("backgroundColorParamColor");
 const backgroundColorParamDarkness = document.getElementById("backgroundColorParamDarkness");
 
 backgroundColorParamColor.oninput = updateBackgroundColorValue;
 backgroundColorParamDarkness.oninput = updateBackgroundColorValue;
+
+function updateBackgroundColorValue() {
+    updateColorValue("rounded w-7 border-2 mr-4 backgroundColorValue", "backgroundColorValue", "backgroundColorParamColor", "backgroundColorParamDarkness", "&nbspbg");
+    if (backgroundColorValue.value === "none"){
+        divBackgroundColorCode = "";
+    } else {
+        divBackgroundColorCode = backgroundColorValue.value;
+    }
+    codeGenerator();
+}
+
 
 
 // Rotate
@@ -321,7 +325,7 @@ function codeGenerator() {
         + divShadowSizeCode
         + divBordersWidthCode
         + divBordersRadiusCode
-        + backgroundColorParamColor.value
+        + divBackgroundColorCode
         + divRotateCode
         + divFloatCode
         + divFlexCode
