@@ -169,8 +169,8 @@
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">影の色</span>
                         <div class="flex float-right">
-                            <div class="rounded w-7 border-2 mr-4" id="divShadowColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="divShadowColorParamColor">
+                            <div class="rounded w-7 border-2 mr-4 divShadowColorValue" id="divShadowColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="divShadowColorParamColor" disabled>
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -198,7 +198,7 @@
                                 <option value="rose">rose</option>
                             </select>
                             <input type="range" min="0" max="9" id="divShadowColorParamDarkness" value="0"
-                                class="float-right">
+                                class="float-right" disabled>
                         </div>
                     </div>
                 </div>
@@ -241,8 +241,8 @@
                         class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center pl-4">
                         <span class="block text-xl">枠線の色</span>
                         <div class="flex float-right">
-                            <div class="rounded w-7 border-2 mr-4" id="divBordersColorValue"></div>
-                            <select class="p-1 rounded mx-2" id="divBordersColorParamColor">
+                            <div class="rounded w-7 border-2 mr-4 divBordersColorValue" id="divBordersColorValue"></div>
+                            <select class="p-1 rounded mx-2" id="divBordersColorParamColor" disabled>
                                 <option value="none">指定なし</option>
                                 <option value="black">black</option>
                                 <option value="white">white</option>
@@ -270,7 +270,7 @@
                                 <option value="rose">rose</option>
                             </select>
                             <input type="range" min="0" max="9" id="divBordersColorParamDarkness" value="0"
-                                class="float-right">
+                                class="float-right" disabled>
                         </div>
                     </div>
                 </div>
@@ -373,8 +373,7 @@
                             class="border-2 rounded-full transition duration-300  border-slate-300 hover:border-slate-800 hover:bg-slate-800 hover:text-slate-100 px-2 py-1 m-1"
                             onclick="copyToClipboard(this.id);">コードをコピー</button>
                     </div>
-                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4"
-                        id="codeBlock"
+                    <textarea class="flex-auto my-1 ml-4 border-2 rounded-lg border-slate-300 p-4" id="codeBlock"
                         readonly><div class=""></div></textarea>
                 </div>
             </div>

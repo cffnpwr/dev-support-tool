@@ -8,6 +8,7 @@ const bordersRadiusList = ["None", "sm", "md", "lg", "xl", "2xl", "3xl", "full"]
 const rotateList = ["None", 0, 1, 2, 3, 6, 12, 45, 90, 180];
 const floatsList = ["None", "right", "left"];
 
+
 // Sizing (縦)
 
 // 値の取得
@@ -26,6 +27,7 @@ divSizeHeight.addEventListener('input', function () {
     // 出力コード生成器の実行
     codeGenerator();
 }, false);
+
 
 // Sizing (横)
 const divSizeWidth = document.getElementById("divSizeWidth");
@@ -50,6 +52,7 @@ divSpacePaddingTop.addEventListener('input', function () {
     codeGenerator();
 }, false);
 
+
 // Padding (下)
 const divSpacePaddingBottom = document.getElementById("divSpacePaddingBottom");
 const divSpacePaddingBottomClass = "&nbsppb-";
@@ -60,6 +63,7 @@ divSpacePaddingBottom.addEventListener('input', function () {
     document.getElementById("divSpacePaddingBottomValue").innerHTML = spaceList[divSpacePaddingBottom.value];
     codeGenerator();
 }, false);
+
 
 // Padding (右)
 const divSpacePaddingRight = document.getElementById("divSpacePaddingRight");
@@ -72,6 +76,7 @@ divSpacePaddingRight.addEventListener('input', function () {
     codeGenerator();
 }, false);
 
+
 // Padding (左)
 const divSpacePaddingLeft = document.getElementById("divSpacePaddingLeft");
 const divSpacePaddingLeftClass = "&nbsppl-";
@@ -82,6 +87,7 @@ divSpacePaddingLeft.addEventListener('input', function () {
     document.getElementById("divSpacePaddingLeftValue").innerHTML = spaceList[divSpacePaddingLeft.value];
     codeGenerator();
 }, false);
+
 
 // Margin (上)
 const divSpaceMarginTop = document.getElementById("divSpaceMarginTop");
@@ -94,6 +100,7 @@ divSpaceMarginTop.addEventListener('input', function () {
     codeGenerator();
 }, false);
 
+
 // Margin (下)
 const divSpaceMarginBottom = document.getElementById("divSpaceMarginBottom");
 const divSpaceMarginBottomClass = "&nbspmb-";
@@ -105,6 +112,7 @@ divSpaceMarginBottom.addEventListener('input', function () {
     codeGenerator();
 }, false);
 
+
 // Margin (右)
 const divSpaceMarginRight = document.getElementById("divSpaceMarginRight");
 const divSpaceMarginRightClass = "&nbspmr-";
@@ -115,6 +123,7 @@ divSpaceMarginRight.addEventListener('input', function () {
     document.getElementById("divSpaceMarginRightValue").innerHTML = spaceList[divSpaceMarginRight.value];
     codeGenerator();
 }, false);
+
 
 // Margin (左)
 const divSpaceMarginLeft = document.getElementById("divSpaceMarginLeft");
@@ -131,21 +140,33 @@ divSpaceMarginLeft.addEventListener('input', function () {
 // Box Shadow (有効化)
 const checkBoxShadow = document.getElementById("isShadow");
 const enableDivShadowSize = document.getElementById("divShadowSize");
+const enableDivShadowColorParamColor = document.getElementById("divShadowColorParamColor")
+const enableDivShadowColorParamDarkness = document.getElementById("divShadowColorParamDarkness")
 
 checkBoxShadow.addEventListener('change', function () {
-    // 有効時
-    if (checkBoxShadow.checked) {
+
+    if (checkBoxShadow.checked) {   // 有効時
         // Box Shadow (大きさ)
         enableDivShadowSize.disabled = false;
         divShadowSizeCode = giveClass(shadowList[divShadowSize.value], divShadowSizeClass);
         document.getElementById("divShadowSizeValue").innerHTML = shadowList[divShadowSize.value];
         codeGenerator();
 
-        // 無効時
-    } else {
+        // Box Shadow (色)
+        enableDivShadowColorParamColor.disabled = false;
+        enableDivShadowColorParamDarkness.disabled = false;
+        updateDivShadowColorValue();
+
+    } else {    // 無効時
         // Box Shadow (大きさ)
         enableDivShadowSize.disabled = true;
         divShadowSizeCode = "";
+
+        // Box Shadow (色)
+        enableDivShadowColorParamColor.disabled = true;
+        enableDivShadowColorParamDarkness.disabled = true;
+        divShadowColorCode = "";
+
         codeGenerator();
     }
 }, false);
@@ -164,16 +185,34 @@ divShadowSize.addEventListener('input', function () {
 
 
 // Box Shadow (色)
+let divShadowColorCode = "";
+
+const divShadowColorParamColor = document.getElementById("divShadowColorParamColor");
+const divShadowColorParamDarkness = document.getElementById("divShadowColorParamDarkness");
+
+divShadowColorParamColor.oninput = updateDivShadowColorValue;
+divShadowColorParamDarkness.oninput = updateDivShadowColorValue;
+
+function updateDivShadowColorValue() {
+    updateColorValue("rounded w-7 border-2 mr-4 divShadowColorValue", "divShadowColorValue", "divShadowColorParamColor", "divShadowColorParamDarkness", "&nbspshadow");
+    if (divShadowColorValue.value === "none") {
+        divShadowColorCode = "";
+    } else {
+        divShadowColorCode = divShadowColorValue.value;
+    }
+    codeGenerator();
+}
 
 
 // Borders (有効化)
 const checkBorders = document.getElementById("isBorders");
 const enableDivBordersWidth = document.getElementById("divBordersWidth");
 const enableDivBordersRadius = document.getElementById("divBordersRadius");
+const enableDivBordersColorParamColor = document.getElementById("divBordersColorParamColor");
+const enableDivBordersColorParamDarkness = document.getElementById("divBordersColorParamDarkness");
 
 checkBorders.addEventListener('change', function () {
-    // 有効時
-    if (checkBorders.checked) {
+    if (checkBorders.checked) {     // 有効時
         // Borders (太さ)
         enableDivBordersWidth.disabled = false;
         divBordersWidthCode = giveClass(bordersList[divBordersWidth.value], divBordersWidthClass);
@@ -186,8 +225,13 @@ checkBorders.addEventListener('change', function () {
 
         codeGenerator();
 
-        // 無効時
-    } else {
+        // Borders (色)
+        enableDivBordersColorParamColor.disabled = false;
+        enableDivBordersColorParamDarkness.disabled = false;
+        updateDivBordersColorValue();
+
+
+    } else {     // 無効時
         // Borders (太さ)
         enableDivBordersWidth.disabled = true;
         divBordersWidthCode = "";
@@ -195,6 +239,11 @@ checkBorders.addEventListener('change', function () {
         // Borders (角)
         enableDivBordersRadius.disabled = true;
         divBordersRadiusCode = "";
+
+        // Borders (色)
+        enableDivBordersColorParamColor.disabled = true;
+        enableDivBordersColorParamDarkness.disabled = true;
+        divBordersColorCode = "";
 
         codeGenerator();
     }
@@ -226,6 +275,23 @@ divBordersRadius.addEventListener('input', function () {
 
 
 // Borders (色)
+let divBordersColorCode = "";
+
+const divBordersColorParamColor = document.getElementById("divBordersColorParamColor");
+const divBordersColorParamDarkness = document.getElementById("divBordersColorParamDarkness");
+
+divBordersColorParamColor.oninput = updateDivBordersColorValue;
+divBordersColorParamDarkness.oninput = updateDivBordersColorValue;
+
+function updateDivBordersColorValue() {
+    updateColorValue("rounded w-7 border-2 mr-4 divBordersColorValue", "divBordersColorValue", "divBordersColorParamColor", "divBordersColorParamDarkness", "&nbspbg");
+    if (divBordersColorValue.value === "none") {
+        divBordersColorCode = "";
+    } else {
+        divBordersColorCode = divBordersColorValue.value;
+    }
+    codeGenerator();
+}
 
 
 // Background Color
@@ -239,14 +305,13 @@ backgroundColorParamDarkness.oninput = updateBackgroundColorValue;
 
 function updateBackgroundColorValue() {
     updateColorValue("rounded w-7 border-2 mr-4 backgroundColorValue", "backgroundColorValue", "backgroundColorParamColor", "backgroundColorParamDarkness", "&nbspbg");
-    if (backgroundColorValue.value === "none"){
+    if (backgroundColorValue.value === "none") {
         divBackgroundColorCode = "";
     } else {
         divBackgroundColorCode = backgroundColorValue.value;
     }
     codeGenerator();
 }
-
 
 
 // Rotate
@@ -291,10 +356,6 @@ checkFlex.addEventListener('change', function () {
 }, false);
 
 
-
-
-
-
 // クラス付与
 function giveClass(parameter, className) {
     if (parameter == "Auto") {
@@ -323,8 +384,10 @@ function codeGenerator() {
         + divSpaceMarginRightCode
         + divSpaceMarginLeftCode
         + divShadowSizeCode
+        + divShadowColorCode
         + divBordersWidthCode
         + divBordersRadiusCode
+        + divBordersColorCode
         + divBackgroundColorCode
         + divRotateCode
         + divFloatCode
