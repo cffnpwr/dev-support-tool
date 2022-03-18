@@ -83,7 +83,7 @@ brightness.addEventListener('input', function() {
 }, false);
 
 //contrast
-const contrastList = [0, 50, 75, 100, 125, 150, 200];
+const contrastList = ["None", 50, 75, 100, 125, 150, 200];
 
 const contrast = document.getElementById("contrast");
 const contrastClass = "contrast-";
@@ -96,7 +96,7 @@ contrast.addEventListener('input', function() {
 }, false);
 
 //dropShadow
-const dropShadowList = ["Auto", "sm", "md", "lg", "xl", "2xl"];
+const dropShadowList = ["None", "sm", "md", "lg", "xl", "2xl"];
 
 const dropShadow = document.getElementById("dropShadow");
 const dropShadowClass = "drop-shadow-";
@@ -122,7 +122,7 @@ hueRotate.addEventListener('input', function() {
 }, false);
 
 //saturate
-const saturateList = [0, 50, 100, 150, 200];
+const saturateList = ["None", 50, 100, 150, 200];
 
 const saturate = document.getElementById("saturate");
 const saturateClass = "saturate-";
@@ -135,7 +135,7 @@ saturate.addEventListener('input', function() {
 }, false);
 
 //opacity
-const opacityList = [0, 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100];
+const opacityList = ["None", 5, 10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 90, 95, 100];
 
 const opacity = document.getElementById("opacity");
 const opacityClass = "opacity-";
