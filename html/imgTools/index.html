@@ -160,6 +160,35 @@
                 </div>
             </div>
 
+            <div class="mb-8 w-full">
+                <h3 class="text-3xl font-semibold font-mono">Align</h3>
+
+                <div class="flex flex-col pl-4">
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">文字の配置(横)</span>
+                        <select class="p-1 rounded mx-2 value border-2 border-slate-300 float-right"
+                            id="textAlignXValue">
+                            <option value="None">指定なし</option>
+                            <option value="text-left">左揃え</option>
+                            <option value="text-center">中央揃え</option>
+                            <option value="text-right">右揃え</option>
+                            <option value="text-justify">横幅フィット</option>
+                        </select>
+                    </div>
+
+                    <div class="md:flex md:flex-row md:justify-between md:space-x-2 py-1 w-full md:place-items-center">
+                        <span class="block text-xl">文字の配置(縦)</span>
+                        <select class="p-1 rounded mx-2 value border-2 border-slate-300 float-right"
+                            id="textAlignYValue">
+                            <option value="None">指定なし</option>
+                            <option value="align-top">上揃え</option>
+                            <option value="align-middle">中央揃え</option>
+                            <option value="align-bottom">下揃え</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div id="previewAndCode" class="lg:w-1/2 m-8 lg:relative">

@@ -147,6 +147,25 @@ opacity.addEventListener('input', function() {
     codeGenerator();
 }, false);
 
+//文字の配置(横)
+const textAlignX = document.getElementById("textAlignXValue");
+let textAlignXCode = "";
+
+textAlignX.addEventListener('input', function() {
+    textAlignXCode = giveClass(textAlignX.value, "");
+    codeGenerator();
+}, false);
+
+
+//文字の配置(縦)
+const textAlignY = document.getElementById("textAlignYValue");
+let textAlignYCode = "";
+
+textAlignY.addEventListener('input', function() {
+    textAlignYCode = giveClass(textAlignY.value, "");
+    codeGenerator();
+}, false);
+
 //クラス付与
 function giveClass(parameter, className) {
     if (parameter == "Auto") {
@@ -162,7 +181,7 @@ function giveClass(parameter, className) {
 
 //コード生成器
 function codeGenerator() {
-    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + '"></img>'
+    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + textAlignXCode + textAlignYCode + '"></img>'
     document.getElementById("codeBlock").innerHTML = codeGeneration;
     document.getElementById("previewBlock").innerHTML = codeGeneration;
 };
