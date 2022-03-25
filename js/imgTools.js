@@ -144,22 +144,16 @@ opacity.addEventListener('input', function() {
     codeGenerator();
 }, false);
 
-//文字の配置(横)
-const textAlignX = document.getElementById("textAlignXValue");
-let textAlignXCode = "";
+//中央揃え
+const centering = document.getElementById("centering");
+let centeringCode = "";
 
-textAlignX.addEventListener('input', function() {
-    textAlignXCode = giveClass(textAlignX.value, "");
-    codeGenerator();
-}, false);
-
-
-//文字の配置(縦)
-const textAlignY = document.getElementById("textAlignYValue");
-let textAlignYCode = "";
-
-textAlignY.addEventListener('input', function() {
-    textAlignYCode = giveClass(textAlignY.value, "");
+centering.addEventListener('change', function() {
+    if(centering.checked){
+        centeringCode = "m-auto";
+    }else{
+        centeringCode = "";
+    }
     codeGenerator();
 }, false);
 
@@ -178,7 +172,7 @@ function giveClass(parameter, className) {
 
 //コード生成器
 function codeGenerator() {
-    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + textAlignXCode + textAlignYCode + '">'
+    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + centeringCode + '">'
     document.getElementById("codeBlock").innerHTML = codeGeneration;
     document.getElementById("previewBlock").innerHTML = codeGeneration;
 };
