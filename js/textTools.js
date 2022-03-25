@@ -8,6 +8,8 @@ function startObserver() {
     const lineWeightParam = document.getElementById("lineWeightParam");
     const lineOffsetParam = document.getElementById("lineOffsetParam");
     const italicValue = document.getElementById("italicValue");
+    const lineHeightParam = document.getElementById("lineHeightParam");
+    const letterSpacingParam = document.getElementById("letterSpacingParam");
 
     const settings = document.getElementById("settings");
 
@@ -20,6 +22,8 @@ function startObserver() {
     lineWeightParam.oninput = updateLineWeightValue;
     lineOffsetParam.oninput = updateLineOffsetValue;
     italicValue.oninput = updateItalicValue;
+    lineHeightParam.oninput = updateLineHeightValue;
+    letterSpacingParam.oninput = updateLetterSpacingValue;
 
     settings.oninput = updatePreview;
 }
@@ -86,6 +90,38 @@ function updateLineOffsetValue(e) {
     else
         value = "none";
     lineOffsetValue.value = value;
+}
+
+function updateLineHeightValue(e) {
+    //height list
+    const heightList = ["none", 3, 4, 5, 6, 7, 8, 9, 10];
+    //doms
+    const lineHeightValue = document.getElementById("lineHeightValue");
+
+    //line height
+    let value = "";
+    lineHeightValue.textContent = heightList[e.target.value];
+    if (heightList[e.target.value] !== "none")
+        value = lineHeightValue.value = "leading-" + heightList[e.target.value];
+    else
+        value = "none";
+    lineHeightValue.value = value;
+}
+
+function updateLetterSpacingValue(e) {
+    //spacing list
+    const spacingList = ["none", "tighter", "tight", "normal", "wide", "wider", "widest"];
+    //doms
+    const letterSpacingValue = document.getElementById("letterSpacingValue");
+
+    //letter spacing
+    let value = "";
+    letterSpacingValue.textContent = spacingList[e.target.value];
+    if (spacingList[e.target.value] !== "none")
+        value = letterSpacingValue.value = "tracking-" + spacingList[e.target.value];
+    else
+        value = "none";
+    letterSpacingValue.value = value;
 }
 
 function updateItalicValue(e) {
