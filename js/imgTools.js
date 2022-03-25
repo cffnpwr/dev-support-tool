@@ -1,6 +1,3 @@
-//初期化
-window.addEventListener('DOMcontentLoaded', codeGenerator, false);
-
 //size
 const sizeList = ["1/4", "2/4", "3/4", "None"];
 const sizeValueList = ["25%", "50%", "75%", "100%"];
@@ -181,7 +178,7 @@ function giveClass(parameter, className) {
 
 //コード生成器
 function codeGenerator() {
-    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + textAlignXCode + textAlignYCode + '"></img>'
+    const codeGeneration = '<img src="img/ここに画像の名前を入力してね.jpg" class="' + wCode + grayscaleCode + invertCode + sepiaCode + blurCode + brightnessCode + contrastCode + dropShadowCode + hueRotateCode + saturateCode + opacityCode + textAlignXCode + textAlignYCode + '">'
     document.getElementById("codeBlock").innerHTML = codeGeneration;
     document.getElementById("previewBlock").innerHTML = codeGeneration;
 };
