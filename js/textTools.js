@@ -94,7 +94,7 @@ function updateLineOffsetValue(e) {
 
 function updateLineHeightValue(e) {
     //height list
-    const heightList = ["none", 3, 4, 5, 6, 7, 8, 9, 10];
+    const heightList = ["none", "tight", "snug", "normal", "relaxed", "loose"];
     //doms
     const lineHeightValue = document.getElementById("lineHeightValue");
 
